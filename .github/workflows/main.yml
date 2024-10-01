@@ -1,8 +1,8 @@
 - name: Set up SSH key
   run: |
     mkdir -p ~/.ssh
-    echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/config
-    chmod 600 ~/.ssh/config
+    echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+    chmod 600 ~/.ssh/id_ed25519
     ssh-keyscan your-vm-ip >> ~/.ssh/known_hosts
 
 - name: Execute deployment script via SSH
