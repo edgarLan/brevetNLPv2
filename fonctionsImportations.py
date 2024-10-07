@@ -53,88 +53,105 @@ def checkYears(year, yearsNeeded, pathData):
 
 # Function taking year, IPC class, path to data, and path to output and writing CSV file toEval for current year and IPC, and also writing secondary IPC in /text/_.txt
 # Needs a directory /test in output path
-def json2toEval(year, ipc, pathData, pathOutput):
+def json2toEval(year, listIPC, pathData, pathOutput):
     print(f"Create toEval, iterate through all patents of current year {year}")
 
     pathYear = pathData+ f"/{year}/"                                # Updates with variable year
     jsonNamesYear = [f for f in listdir(pathYear) if isfile(join(pathYear, f))] 
 
-    # Initialization of list for IPC class
-    decision_ipc  = collections.defaultdict(int) # Initialization of dict for IPC class - initialized at 0, used to count occurences   
-    patent_ipc_list = [] # initialization of list for IPC class 
+    # Initialize list for each IPC class
+    patent_listIPC_dict = {ipc: [] for ipc in listIPC}  # A list to store patents for each IPC
 
-    # Creates list of patents from this IPC class
+    # Creates list of patents for each IPC class
     for i in tqdm(range(len(jsonNamesYear))):
         patent_path = pathYear + jsonNamesYear[i]
         with open(patent_path) as f:
-            d = json.load(f) # load json in d
-            f.close()   # close f - not needed with "with ___ as" syntax
+            d = json.load(f)  # Load json in d
+            # No need to explicitly close the file with "with open" syntax
+            
         class_mainIPC = d['main_ipcr_label']
-        if re.match(f'^{ipc}', class_mainIPC):
-            patent_ipc_list.append(jsonNamesYear[i])
-            decision_ipc[d['decision']] += 1
-
-    # Create list exluding all other than accepted and rejected
-    final_patents = []
-    for i in tqdm(range(len(patent_ipc_list))):
-        patent_path = pathYear + patent_ipc_list[i]
-        with open(patent_path) as f:
-            d = json.load(f)
-            f.close()
-        if d['decision'] == 'ACCEPTED' or d['decision'] == 'REJECTED': # exclude all other
-            final_patents.append(patent_ipc_list[i])
-
-    # Load needed data for patents
-    non_main_ipc = []
-    labels, patent_number, titles, backgrounds, claims, summary, abstract, main_ipc, sec_ipc = [], [], [], [], [], [], [], [], []
-
-    for i in tqdm(range(len(final_patents))):
-        patent_path = pathYear + final_patents[i]
-        with open(patent_path) as f:
-            d = json.load(f)
-            f.close() # ligne inutile
         
-        #Creating the lists for the other information
-        patent_number.append(d['application_number'])
-        titles.append(d['title'])
-        backgrounds.append(d['background'])
-        claims.append(d['claims'])
-        summary.append(d['summary'])
-        abstract.append(d['abstract'])
-        main_ipc.append(d['main_ipcr_label'])
-        sec_ipc.append(d['ipcr_labels'])
+        # Check if the class matches any IPC in the listIPC
+        for ipc in listIPC:
+            if re.match(f'^{ipc}', class_mainIPC):
+                patent_listIPC_dict[ipc].append(jsonNamesYear[i])
+    
+    final_patents_dict = {ipc: [] for ipc in listIPC}  # Create a final list for each IPC
 
-        #Collecting non main ipc class -useful to create good expectation class
-        non_main =  d['ipcr_labels']
-        for ipcr in non_main:
-            non_main_ipc.append(ipcr) # only 4 first characters to be sure of being at same level
-        #Getting labels based on decision
-        label = 0
-        if d['decision'] == 'ACCEPTED':
-            label = 1
-        labels.append(label)
+    # Create list excluding all other than accepted and rejected
+    for ipc in listIPC:
+        # Access the patents for each IPC class
+        patent_listIPC = patent_listIPC_dict[ipc]  
+    
+        for i in tqdm(range(len(patent_listIPC))):
+            patent_path = pathYear + patent_listIPC[i]
+            with open(patent_path) as f:
+                d = json.load(f)
+            
+            # Check if the decision is either ACCEPTED or REJECTED
+            if d['decision'] in ['ACCEPTED', 'REJECTED']: 
+                final_patents_dict[ipc].append(patent_listIPC[i])  # Add to the corresponding IPC list
 
-    # Keep only secondary class that are not the main ipc class
-    expectations_classes = list(set(non_main_ipc)) # unique secondary ipc classes
-    good_expectations_classes = []
-    for ipcr in expectations_classes:
-        if ipcr[0:4] != f"{ipc}":
-            good_expectations_classes.append(ipcr)
+    good_expectations_classes_dict = {ipc: [] for ipc in listIPC}  # To store good expectations for each IPC
 
-    # df to csv
-    df = pd.DataFrame({'application_number': patent_number, 'title': titles, 'abstract':abstract,
-                        'claims':claims, 'background': backgrounds, 'summary':summary, 'ipc':ipc, 'sec_ipc': sec_ipc, 'label': labels})
+    # Load needed data for patents by IPC class
+    data_by_ipc = {ipc: {
+        'patent_number': [], 'titles': [], 'backgrounds': [], 'claims': [],
+        'summary': [], 'abstract': [], 'main_ipc': [], 'sec_ipc': [], 'labels': []
+    } for ipc in listIPC}
 
-    df.to_csv(pathOutput + f'/toEval/{year}_{ipc}_patents_toEval.csv', index=False)
-    print(f"toEval/toEval/{year}_{ipc} done")
-    print("toEval shape: ", df.shape)
-    # Save IPC in text format
-    with open(pathOutput + f'/ES/text/{year}_{ipc}_expectation_IPC_class.txt', 'w') as fp:
-        for item in good_expectations_classes:
-            # write each item on a new line
-            fp.write("%s\n" % item)
-        print(f'text/{year}_{ipc} Done')
-    print("Nb secondary IPC (text size): ", len(good_expectations_classes))
+    for ipc in listIPC:
+        non_main_ipc = []  
+        for i in tqdm(range(len(final_patents_dict[ipc]))):
+            patent_path = pathYear + final_patents_dict[ipc][i]
+            with open(patent_path) as f:
+                d = json.load(f)
+
+            # Creating the lists for the other information
+            data_by_ipc[ipc]['patent_number'].append(d['application_number'])
+            data_by_ipc[ipc]['titles'].append(d['title'])
+            data_by_ipc[ipc]['backgrounds'].append(d['background'])
+            data_by_ipc[ipc]['claims'].append(d['claims'])
+            data_by_ipc[ipc]['summary'].append(d['summary'])
+            data_by_ipc[ipc]['abstract'].append(d['abstract'])
+            data_by_ipc[ipc]['main_ipc'].append(d['main_ipcr_label'])
+            data_by_ipc[ipc]['sec_ipc'].append(d['ipcr_labels'])
+
+            # Getting labels based on decision
+            label = 0
+            if d['decision'] == 'ACCEPTED':
+                label = 1
+            data_by_ipc[ipc]['labels'].append(label)
+
+            # Collect secondary IPC classes and filter out the main IPC class
+            non_main_ipc.extend([ipcr for ipcr in d['ipcr_labels'] if ipcr != d['main_ipcr_label']])
+
+        # Keep only unique secondary IPC classes
+        expectations_classes = list(set(non_main_ipc))  # Unique secondary IPC classes
+        good_expectations_classes_dict[ipc] = [ipcr for ipcr in expectations_classes if ipcr[:4] != ipc]  # Exclude main IPC classes
+
+    # Prepare DataFrames and save to CSV files for each IPC class
+    for ipc in listIPC:
+        df = pd.DataFrame({
+            'application_number': data_by_ipc[ipc]['patent_number'],
+            'title': data_by_ipc[ipc]['titles'],
+            'abstract': data_by_ipc[ipc]['abstract'],
+            'claims': data_by_ipc[ipc]['claims'],
+            'background': data_by_ipc[ipc]['backgrounds'],
+            'summary': data_by_ipc[ipc]['summary'],
+            'ipc': ipc,
+            'sec_ipc': data_by_ipc[ipc]['sec_ipc'],
+            'label': data_by_ipc[ipc]['labels']
+        })
+        df.to_csv(pathOutput + f'/toEval/{year}_{ipc}_patents_toEval.csv', index=False)
+
+        # Save IPC in text format for each IPC class
+        with open(pathOutput + f'/ES/text/{year}_{ipc}_expectation_IPC_class.txt', 'w') as fp:
+            for item in good_expectations_classes_dict[ipc]:
+                fp.write("%s\n" % item)
+            print(f'text/{year}_{ipc} Done')
+        print(f"Nb secondary IPC for {ipc}: ", len(good_expectations_classes_dict[ipc]))
+
 
 # Function taking ips, year studied, year in which we are searching, and path for input and output, and outputs dfs for ES et KS for the year_yearRef
 def json2_KS_ES(year, yearRef, ipc, pathData, pathOutput):
@@ -289,6 +306,6 @@ def loopFinal(listIPC, listYearsEval, nbYearsRef, pathData, pathOutput):
     # Loop through each ipc
     for ipc in tqdm(listIPC):
         # Loop through each year
-        for year in listYearsEval:
+        for year in tqdm(listYearsEval):
             json2toEval(year, ipc, pathData, pathOutput)
             loop_KS_ES(year, nbYearsRef, ipc, pathData, pathOutput)
