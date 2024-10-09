@@ -9,8 +9,6 @@ from tqdm import tqdm
 import tarfile 
 import time
 
-
-
 def tar_gz2json(yearBeginning, yearEnd, basePath, destPath):
     for year in range(yearBeginning, yearEnd+1):  # 2019 is excluded
         # Construct the filename
@@ -65,7 +63,7 @@ def json2toEval(year, listIPC, pathData, pathOutput):
     patent_listIPC_dict = {ipc: [] for ipc in listIPC}  # A list to store patents for each IPC
 
     # Set up tqdm progress bar
-    batch_size = 2  # Set a batch size for updating the progress bar
+    batch_size = 500  # Set a batch size for updating the progress bar
     total_patents = len(jsonNamesYear)  # Total number of patents to process
     pbar = tqdm(total=total_patents, desc="Processing patents")
 
@@ -217,7 +215,7 @@ def json2_KS_ES(year, yearRef, listIPC, pathData, pathOutput):
     print(f"Iterating through patents of reference year {yearRef} for evalYear {year}")
     
     # Set up tqdm progress bar
-    batch_size = 2  # Set a batch size for updating the progress bar
+    batch_size = 500  # Set a batch size for updating the progress bar
     total_patents = len(jsonNamesYear)  # Total number of patents to process
     pbar = tqdm(total=total_patents, desc="Processing patents for ES/KS")
 
@@ -359,6 +357,7 @@ def json2_KS_ES(year, yearRef, listIPC, pathData, pathOutput):
 
         # Create Knowledge Space (KS) for this IPC
         patent_number, titles, backgrounds, claims, summary, abstract, main_ipc, labels, sec_ipc, yearRefVec = [], [], [], [], [], [], [], [], [], []
+        
         for patent_file in tqdm(KS_ipc_dict[ipc]):
             patent_path = pathYear + patent_file
             with open(patent_path) as f:
@@ -392,6 +391,7 @@ def json2_KS_ES(year, yearRef, listIPC, pathData, pathOutput):
 
         # Create Expectation Space (ES) for this IPC
         patent_number, titles, backgrounds, claims, summary, abstract, main_ipc, labels, sec_ipc, yearRefVec = [], [], [], [], [], [], [], [], [], []
+        
         for patent_file in tqdm(ES_ipc_dict[ipc]):
             patent_path = pathYear + patent_file
             with open(patent_path) as f:
