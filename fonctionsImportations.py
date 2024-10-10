@@ -52,8 +52,8 @@ def checkYears(year, yearsNeeded, pathData):
     return ret
 
 # Function taking year, IPC class, path to data, and path to output and writing CSV file toEval for current year and IPC, and also writing secondary IPC in /text/_.txt
-# Needs a directory /test in output path
-def json2toEval(year, listIPC, pathData, pathOutput):
+# Needs a directory /test in output ES path
+def json2toEval(year, listIPC, pathData, pathOutput, batch_size=1):
     print(f"Create toEval, iterate through all patents of current year {year}")
 
     pathYear = pathData + f"/{year}/"  # Updates with variable year
@@ -69,36 +69,75 @@ def json2toEval(year, listIPC, pathData, pathOutput):
     } for ipc in listIPC}
     non_main_ipc = {ipc: [] for ipc in listIPC}
 
+    # Total number of JSON files
+    total_files = len(jsonNamesYear)
+
+    # Creates a list of patents for each IPC class with batch-size tqdm
+    with tqdm(total=total_files, desc=f"toEval - Processing patents - {year}") as pbar:
+        for i in range(0, total_files, batch_size):
+            for j in range(i, min(i + batch_size, total_files)):  # Process in batches
+                patent_path = pathYear + jsonNamesYear[j]
+                with open(patent_path) as f:
+                    d = json.load(f)  # Load JSON in d
+
+                class_mainIPC = d['main_ipcr_label']
+
+                # Check if the class matches any IPC in the listIPC
+                for ipc in listIPC:
+                    if re.match(f'^{ipc}', class_mainIPC):
+                        if d['decision'] in ['ACCEPTED', 'REJECTED']:  # Only for accepted and rejected
+                            # Creating the lists for the other information
+                            data_by_ipc[ipc]['patent_number'].append(d['application_number'])
+                            data_by_ipc[ipc]['titles'].append(d['title'])
+                            data_by_ipc[ipc]['backgrounds'].append(d['background'])
+                            data_by_ipc[ipc]['claims'].append(d['claims'])
+                            data_by_ipc[ipc]['summary'].append(d['summary'])
+                            data_by_ipc[ipc]['abstract'].append(d['abstract'])
+                            data_by_ipc[ipc]['main_ipc'].append(d['main_ipcr_label'])
+                            data_by_ipc[ipc]['sec_ipc'].append(d['ipcr_labels'])
+
+                            # Getting labels based on decision
+                            label = 0
+                            if d['decision'] == 'ACCEPTED':
+                                label = 1
+                            data_by_ipc[ipc]['labels'].append(label)
+
+                            # Collect secondary IPC classes and filter out the main IPC class
+                            non_main_ipc[ipc].extend([ipcr for ipcr in d['ipcr_labels'] if ipcr != d['main_ipcr_label']])
+
+            # Update the progress bar after processing each batch
+            pbar.update(min(batch_size, total_files - i))
+
     # Creates list of patents for each IPC class
-    for i in tqdm(range(len(jsonNamesYear))):
-        patent_path = pathYear + jsonNamesYear[i]
-        with open(patent_path) as f:
-            d = json.load(f)  # Load json in d
+    # for i in tqdm(range(len(jsonNamesYear))):
+    #     patent_path = pathYear + jsonNamesYear[i]
+    #     with open(patent_path) as f:
+    #         d = json.load(f)  # Load json in d
 
-        class_mainIPC = d['main_ipcr_label']
+    #     class_mainIPC = d['main_ipcr_label']
         
-        # Check if the class matches any IPC in the listIPC
-        for ipc in listIPC:
-            if re.match(f'^{ipc}', class_mainIPC):
-                if d['decision'] in ['ACCEPTED', 'REJECTED']: # only for accepted and rejected            
-                    # Creating the lists for the other information
-                    data_by_ipc[ipc]['patent_number'].append(d['application_number'])
-                    data_by_ipc[ipc]['titles'].append(d['title'])
-                    data_by_ipc[ipc]['backgrounds'].append(d['background'])
-                    data_by_ipc[ipc]['claims'].append(d['claims'])
-                    data_by_ipc[ipc]['summary'].append(d['summary'])
-                    data_by_ipc[ipc]['abstract'].append(d['abstract'])
-                    data_by_ipc[ipc]['main_ipc'].append(d['main_ipcr_label'])
-                    data_by_ipc[ipc]['sec_ipc'].append(d['ipcr_labels'])
+    #     # Check if the class matches any IPC in the listIPC
+    #     for ipc in listIPC:
+    #         if re.match(f'^{ipc}', class_mainIPC):
+    #             if d['decision'] in ['ACCEPTED', 'REJECTED']: # only for accepted and rejected            
+    #                 # Creating the lists for the other information
+    #                 data_by_ipc[ipc]['patent_number'].append(d['application_number'])
+    #                 data_by_ipc[ipc]['titles'].append(d['title'])
+    #                 data_by_ipc[ipc]['backgrounds'].append(d['background'])
+    #                 data_by_ipc[ipc]['claims'].append(d['claims'])
+    #                 data_by_ipc[ipc]['summary'].append(d['summary'])
+    #                 data_by_ipc[ipc]['abstract'].append(d['abstract'])
+    #                 data_by_ipc[ipc]['main_ipc'].append(d['main_ipcr_label'])
+    #                 data_by_ipc[ipc]['sec_ipc'].append(d['ipcr_labels'])
 
-                    # Getting labels based on decision
-                    label = 0
-                    if d['decision'] == 'ACCEPTED':
-                        label = 1
-                    data_by_ipc[ipc]['labels'].append(label)
+    #                 # Getting labels based on decision
+    #                 label = 0
+    #                 if d['decision'] == 'ACCEPTED':
+    #                     label = 1
+    #                 data_by_ipc[ipc]['labels'].append(label)
 
-                    # Collect secondary IPC classes and filter out the main IPC class
-                    non_main_ipc[ipc].extend([ipcr for ipcr in d['ipcr_labels'] if ipcr != d['main_ipcr_label']])
+    #                 # Collect secondary IPC classes and filter out the main IPC class
+    #                 non_main_ipc[ipc].extend([ipcr for ipcr in d['ipcr_labels'] if ipcr != d['main_ipcr_label']])
 
     for ipc in listIPC:
         expectations_classes = list(set(non_main_ipc[ipc]))  # Keep only unique secondary IPC classes
@@ -128,7 +167,7 @@ def json2toEval(year, listIPC, pathData, pathOutput):
 
 
 # Function taking list of IPC, year studied and one year reference and returns dfs for all ES and KS for that year_yearRef for all IPCs.
-def json2_KS_ES(year, yearRef, listIPC, pathData, pathOutput):
+def json2_KS_ES(year, yearRef, listIPC, pathData, pathOutput, batch_size=1):
     pathYear = pathData + f"/{yearRef}/"  # Updates with variable year
     jsonNamesYear = [f for f in listdir(pathYear) if isfile(join(pathYear, f))]
 
@@ -155,43 +194,89 @@ def json2_KS_ES(year, yearRef, listIPC, pathData, pathOutput):
 
     print(f"Iterating through patents of reference year {yearRef} for evalYear {year}")
 
-    for i in tqdm(range(len(jsonNamesYear))):
-        patent_path = pathYear + jsonNamesYear[i]
-        with open(patent_path) as f:
-            d = json.load(f)
+    total_files = len(jsonNamesYear)
 
-        class_mainIPC = d['main_ipcr_label']
-        class_main = class_mainIPC[0:4]
+# Creates lists for both Knowledge Space (KS) and Expectation Space (ES) with batch-size tqdm
+    with tqdm(total=total_files, desc='Processing patents') as pbar:
+        for i in range(0, total_files, batch_size):
+            for j in range(i, min(i + batch_size, total_files)):  # Process in batches
+                patent_path = pathYear + jsonNamesYear[j]
+                with open(patent_path) as f:
+                    d = json.load(f)  # Load JSON in d
 
-        # Collect all documents related to the main class for all IPCs
-        for ipc in listIPC:
-            # Create Knowledge Space (KS) for this IPC
-            if class_main == ipc:
-                if int(d['date_published']) < current_date or d['decision'] in ['ACCEPTED', 'REJECTED']:
-                    patent_number[ipc].append(d['application_number'])
-                    titles[ipc].append(d['title'])
-                    backgrounds[ipc].append(d['background'])
-                    claims[ipc].append(d['claims'])
-                    summary[ipc].append(d['summary'])
-                    abstract[ipc].append(d['abstract'])
-                    main_ipc[ipc].append(d['main_ipcr_label'])
-                    labels[ipc].append(d['decision'])
-                    sec_ipc[ipc].append(d['ipcr_labels'])
-                    yearRefVec[ipc].append(yearRef)
+                class_mainIPC = d['main_ipcr_label']
+                class_main = class_mainIPC[0:4]
 
-            # Create Expectation Space (ES) for this IPC
-            if class_mainIPC in expect_classes_ipc_dict[ipc]:
-                if int(d['date_published']) < current_date or d['decision'] in ['ACCEPTED', 'REJECTED']:
-                    patent_numberE[ipc].append(d['application_number'])
-                    titlesE[ipc].append(d['title'])
-                    backgroundsE[ipc].append(d['background'])
-                    claimsE[ipc].append(d['claims'])
-                    summaryE[ipc].append(d['summary'])
-                    abstractE[ipc].append(d['abstract'])
-                    main_ipcE[ipc].append(d['main_ipcr_label'])
-                    labelsE[ipc].append(d['decision'])
-                    sec_ipcE[ipc].append(d['ipcr_labels'])
-                    yearRefVecE[ipc].append(yearRef)
+                # Collect all documents related to the main class for all IPCs
+                for ipc in listIPC:
+                    # Create Knowledge Space (KS) for this IPC
+                    if class_main == ipc:
+                        if int(d['date_published']) < current_date or d['decision'] in ['ACCEPTED', 'REJECTED']:
+                            patent_number[ipc].append(d['application_number'])
+                            titles[ipc].append(d['title'])
+                            backgrounds[ipc].append(d['background'])
+                            claims[ipc].append(d['claims'])
+                            summary[ipc].append(d['summary'])
+                            abstract[ipc].append(d['abstract'])
+                            main_ipc[ipc].append(d['main_ipcr_label'])
+                            labels[ipc].append(d['decision'])
+                            sec_ipc[ipc].append(d['ipcr_labels'])
+                            yearRefVec[ipc].append(yearRef)
+
+                    # Create Expectation Space (ES) for this IPC
+                    if class_mainIPC in expect_classes_ipc_dict[ipc]:
+                        if int(d['date_published']) < current_date or d['decision'] in ['ACCEPTED', 'REJECTED']:
+                            patent_numberE[ipc].append(d['application_number'])
+                            titlesE[ipc].append(d['title'])
+                            backgroundsE[ipc].append(d['background'])
+                            claimsE[ipc].append(d['claims'])
+                            summaryE[ipc].append(d['summary'])
+                            abstractE[ipc].append(d['abstract'])
+                            main_ipcE[ipc].append(d['main_ipcr_label'])
+                            labelsE[ipc].append(d['decision'])
+                            sec_ipcE[ipc].append(d['ipcr_labels'])
+                            yearRefVecE[ipc].append(yearRef)
+
+            # Update the progress bar after processing each batch
+            pbar.update(min(batch_size, total_files - i))
+
+    # for i in tqdm(range(len(jsonNamesYear))):
+    #     patent_path = pathYear + jsonNamesYear[i]
+    #     with open(patent_path) as f:
+    #         d = json.load(f)
+
+    #     class_mainIPC = d['main_ipcr_label']
+    #     class_main = class_mainIPC[0:4]
+
+    #     # Collect all documents related to the main class for all IPCs
+    #     for ipc in listIPC:
+    #         # Create Knowledge Space (KS) for this IPC
+    #         if class_main == ipc:
+    #             if int(d['date_published']) < current_date or d['decision'] in ['ACCEPTED', 'REJECTED']:
+    #                 patent_number[ipc].append(d['application_number'])
+    #                 titles[ipc].append(d['title'])
+    #                 backgrounds[ipc].append(d['background'])
+    #                 claims[ipc].append(d['claims'])
+    #                 summary[ipc].append(d['summary'])
+    #                 abstract[ipc].append(d['abstract'])
+    #                 main_ipc[ipc].append(d['main_ipcr_label'])
+    #                 labels[ipc].append(d['decision'])
+    #                 sec_ipc[ipc].append(d['ipcr_labels'])
+    #                 yearRefVec[ipc].append(yearRef)
+
+    #         # Create Expectation Space (ES) for this IPC
+    #         if class_mainIPC in expect_classes_ipc_dict[ipc]:
+    #             if int(d['date_published']) < current_date or d['decision'] in ['ACCEPTED', 'REJECTED']:
+    #                 patent_numberE[ipc].append(d['application_number'])
+    #                 titlesE[ipc].append(d['title'])
+    #                 backgroundsE[ipc].append(d['background'])
+    #                 claimsE[ipc].append(d['claims'])
+    #                 summaryE[ipc].append(d['summary'])
+    #                 abstractE[ipc].append(d['abstract'])
+    #                 main_ipcE[ipc].append(d['main_ipcr_label'])
+    #                 labelsE[ipc].append(d['decision'])
+    #                 sec_ipcE[ipc].append(d['ipcr_labels'])
+    #                 yearRefVecE[ipc].append(yearRef)
 
 
     for ipc in listIPC:
@@ -346,11 +431,11 @@ def json2_KS_ES(year, yearRef, listIPC, pathData, pathOutput):
     return (df_KS_dict, df_ES_dict)
 
 # Function that simply loops over json2_KS_ES yearsNeeded times, and binds dataframes together. Writes a CSV for KS and ES.
-def loop_KS_ES(year, yearsNeeded, listIPC, pathData, pathOutput):
+def loop_KS_ES(year, yearsNeeded, listIPC, pathData, pathOutput, batch_size=1):
     required_years = set(range(year - yearsNeeded, year))
     dfs_temp = {rY: pd.DataFrame() for rY in required_years}
     for rY in required_years:
-        dfs_temp[rY] = json2_KS_ES(year, rY, listIPC, pathData, pathOutput)
+        dfs_temp[rY] = json2_KS_ES(year, rY, listIPC, pathData, pathOutput, batch_size)
     for ipc in listIPC:
         df_KS = pd.DataFrame()
         df_ES = pd.DataFrame()
@@ -387,7 +472,7 @@ def loop_KS_ES(year, yearsNeeded, listIPC, pathData, pathOutput):
         print("df_ES shape: ", df_ES.shape)
 
 # Function taking years to be evaluated, number of years as reference and a list of IPC classes.
-def loopFinal(listIPC, listYearsEval, nbYearsRef, pathData, pathOutput):
+def loopFinal(listIPC, listYearsEval, nbYearsRef, pathData, pathOutput, batch_size=1):
     # check if valid years
     for year in listYearsEval:   
         cY = checkYears(year, nbYearsRef, pathData)
@@ -395,5 +480,5 @@ def loopFinal(listIPC, listYearsEval, nbYearsRef, pathData, pathOutput):
             return
         # Loop through each year
         for year in listYearsEval:
-            json2toEval(year, listIPC, pathData, pathOutput)
-            loop_KS_ES(year, nbYearsRef, listIPC, pathData, pathOutput)
+            json2toEval(year, listIPC, pathData, pathOutput, batch_size)
+            loop_KS_ES(year, nbYearsRef, listIPC, pathData, pathOutput, batch_size)
