@@ -13,3 +13,6 @@ env/
 # Ignore system files
 .DS_Store
 Thumbs.db
+
+# Ignore nb.log file
+# nb.log
