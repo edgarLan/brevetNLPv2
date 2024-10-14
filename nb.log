@@ -732,4 +732,94 @@ Error in atexit._run_exitfuncs:
 Traceback (most recent call last):
   File "/opt/conda/lib/python3.7/site-packages/IPython/core/history.py", line 578, in end_session
     len(self.input_hist_parsed)-1, self.session_number))
-sqlite3.OperationalError: 
+sqlite3.OperationalError: Autosaving every 5 seconds
+Autosaving every 5 seconds
+All 5 reference years for eval year 2015 present
+toEval already done for year 2015
+Iterating through patents of reference year 2010 for evalYear 2015
+Processing patents:   0%|          | 0/304660 [00:00<?, ?it/s]Processing patents:  33%|███▎      | 100000/304660 [27:34<56:26, 60.43it/s]Processing patents:  33%|███▎      | 100000/304660 [27:50<56:26, 60.43it/s]Processing patents:  66%|██████▌   | 200000/304660 [56:05<29:26, 59.25it/s]Processing patents:  66%|██████▌   | 200000/304660 [56:20<29:26, 59.25it/s]Processing patents:  98%|█████████▊| 300000/304660 [1:24:08<01:18, 59.34it/s]Processing patents:  98%|█████████▊| 300000/304660 [1:24:20<01:18, 59.34it/s]Processing patents: 100%|██████████| 304660/304660 [1:25:26<00:00, 59.33it/s]Processing patents: 100%|██████████| 304660/304660 [1:25:26<00:00, 59.42it/s]
+Iterating through patents of reference year 2011 for evalYear 2015
+Processing patents:   0%|          | 0/316045 [00:00<?, ?it/s]Processing patents:  32%|███▏      | 100000/316045 [30:25<1:05:44, 54.77it/s]Processing patents:  32%|███▏      | 100000/316045 [30:40<1:05:44, 54.77it/s]Processing patents:  63%|██████▎   | 200000/316045 [1:01:01<35:25, 54.60it/s]Processing patents:  63%|██████▎   | 200000/316045 [1:01:20<35:25, 54.60it/s]Processing patents:  95%|█████████▍| 300000/316045 [1:30:26<04:49, 55.52it/s]Processing patents:  95%|█████████▍| 300000/316045 [1:30:40<04:49, 55.52it/s]Processing patents: 100%|██████████| 316045/316045 [1:35:16<00:00, 55.50it/s]Processing patents: 100%|██████████| 316045/316045 [1:35:16<00:00, 55.29it/s]
+Iterating through patents of reference year 2012 for evalYear 2015
+Processing patents:   0%|          | 0/344929 [00:00<?, ?it/s]Processing patents:  29%|██▉       | 100000/344929 [30:10<1:13:53, 55.24it/s]Processing patents:  29%|██▉       | 100000/344929 [30:20<1:13:53, 55.24it/s]Processing patents:  58%|█████▊    | 200000/344929 [59:53<43:20, 55.72it/s]  Processing patents:  58%|█████▊    | 200000/344929 [1:00:10<43:20, 55.72it/s]Processing patents:  87%|████████▋ | 300000/344929 [1:27:06<12:52, 58.12it/s]Processing patents:  87%|████████▋ | 300000/344929 [1:27:20<12:52, 58.12it/s]Processing patents: 100%|██████████| 344929/344929 [1:39:02<00:00, 59.11it/s]Processing patents: 100%|██████████| 344929/344929 [1:39:02<00:00, 58.05it/s]
+Iterating through patents of reference year 2013 for evalYear 2015
+Processing patents:   0%|          | 0/364088 [00:00<?, ?it/s]Processing patents:  27%|██▋       | 100000/364088 [26:40<1:10:26, 62.49it/s]Processing patents:  27%|██▋       | 100000/364088 [26:56<1:10:26, 62.49it/s]Processing patents:  55%|█████▍    | 200000/364088 [55:05<45:27, 60.16it/s]  Processing patents:  55%|█████▍    | 200000/364088 [55:16<45:27, 60.16it/s]Processing patents:  82%|████████▏ | 300000/364088 [1:24:26<18:14, 58.57it/s]Processing patents:  82%|████████▏ | 300000/364088 [1:24:46<18:14, 58.57it/s]Processing patents: 100%|██████████| 364088/364088 [1:44:19<00:00, 57.06it/s]Processing patents: 100%|██████████| 364088/364088 [1:44:19<00:00, 58.17it/s]
+Iterating through patents of reference year 2014 for evalYear 2015
+Processing patents:   0%|          | 0/376384 [00:00<?, ?it/s]Processing patents:  27%|██▋       | 100000/376384 [30:46<1:25:03, 54.16it/s]Processing patents:  27%|██▋       | 100000/376384 [31:04<1:25:03, 54.16it/s]Processing patents:  53%|█████▎    | 200000/376384 [1:01:47<54:31, 53.91it/s]Processing patents:  53%|█████▎    | 200000/376384 [1:02:04<54:31, 53.91it/s]Processing patents:  80%|███████▉  | 300000/376384 [1:32:52<23:40, 53.78it/s]Processing patents:  80%|███████▉  | 300000/376384 [1:33:04<23:40, 53.78it/s]Processing patents: 100%|██████████| 376384/376384 [1:57:40<00:00, 52.93it/s]Processing patents: 100%|██████████| 376384/376384 [1:57:40<00:00, 53.31it/s]
+ES and KS done for: 2015_2010_G06F
+ES and KS done for: 2015_2011_G06F
+ES and KS done for: 2015_2012_G06F
+ES and KS done for: 2015_2013_G06F
+ES and KS done for: 2015_2014_G06F
+df_KS shape:  (179153, 10)
+df_ES shape:  (466152, 10)
+ES and KS done for: 2015_2010_G01N
+ES and KS done for: 2015_2011_G01N
+ES and KS done for: 2015_2012_G01N
+ES and KS done for: 2015_2013_G01N
+ES and KS done for: 2015_2014_G01N
+df_KS shape:  (27154, 10)
+df_ES shape:  (342671, 10)
+ES and KS done for: 2015_2010_A61B
+ES and KS done for: 2015_2011_A61B
+ES and KS done for: 2015_2012_A61B
+ES and KS done for: 2015_2013_A61B
+ES and KS done for: 2015_2014_A61B
+df_KS shape:  (45634, 10)
+df_ES shape:  (323060, 10)
+ES and KS done for: 2015_2010_B60L
+ES and KS done for: 2015_2011_B60L
+ES and KS done for: 2015_2012_B60L
+ES and KS done for: 2015_2013_B60L
+ES and KS done for: 2015_2014_B60L
+df_KS shape:  (2519, 10)
+df_ES shape:  (125469, 10)
+ES and KS done for: 2015_2010_E21B
+ES and KS done for: 2015_2011_E21B
+ES and KS done for: 2015_2012_E21B
+ES and KS done for: 2015_2013_E21B
+ES and KS done for: 2015_2014_E21B
+df_KS shape:  (12700, 10)
+df_ES shape:  (90477, 10)
+ES and KS done for: 2015_2010_F03D
+ES and KS done for: 2015_2011_F03D
+ES and KS done for: 2015_2012_F03D
+ES and KS done for: 2015_2013_F03D
+ES and KS done for: 2015_2014_F03D
+df_KS shape:  (2682, 10)
+df_ES shape:  (30626, 10)
+ES and KS done for: 2015_2010_H01L
+ES and KS done for: 2015_2011_H01L
+ES and KS done for: 2015_2012_H01L
+ES and KS done for: 2015_2013_H01L
+ES and KS done for: 2015_2014_H01L
+df_KS shape:  (96894, 10)
+df_ES shape:  (259308, 10)
+ES and KS done for: 2015_2010_H04W
+ES and KS done for: 2015_2011_H04W
+ES and KS done for: 2015_2012_H04W
+ES and KS done for: 2015_2013_H04W
+ES and KS done for: 2015_2014_H04W
+df_KS shape:  (51745, 10)
+df_ES shape:  (296357, 10)
+ES and KS done for: 2015_2010_C07D
+ES and KS done for: 2015_2011_C07D
+ES and KS done for: 2015_2012_C07D
+ES and KS done for: 2015_2013_C07D
+ES and KS done for: 2015_2014_C07D
+df_KS shape:  (13081, 10)
+df_ES shape:  (101228, 10)
+ES and KS done for: 2015_2010_D07B
+ES and KS done for: 2015_2011_D07B
+ES and KS done for: 2015_2012_D07B
+ES and KS done for: 2015_2013_D07B
+ES and KS done for: 2015_2014_D07B
+df_KS shape:  (93, 10)
+df_ES shape:  (264, 10)
+ES and KS done for: 2015_2010_B32B
+ES and KS done for: 2015_2011_B32B
+ES and KS done for: 2015_2012_B32B
+ES and KS done for: 2015_2013_B32B
+ES and KS done for: 2015_2014_B32B
+df_KS shape:  (14775, 10)
+df_ES shape:  (74696, 10)
