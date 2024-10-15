@@ -249,7 +249,12 @@ All 5 reference years for eval year 2011 present
 toEval already done for year 2011
 Iterating through patents of reference year 2006 for evalYear 2011
 
-Processing patents:   0%|          | 0/309449 [00:00<?, ?it/s]Processing patents:  32%|███▏      | 100000/309449 [29:24<1:01:35, 56.68it/s]Processing patents:  32%|███▏      | 100000/309449 [29:44<1:01:35, 56.68it/s]Processing patents:  65%|██████▍   | 200000/309449 [58:44<32:08, 56.75it/s]  Processing patents:  65%|██████▍   | 200000/309449 [59:04<32:08, 56.75it/s]Processing patents:  65%|██████▍   | 200000/309449 [1:21:16<44:28, 41.01it/s]
+Processing patents:   0%|          | 0/309449 [00:00<?, ?it/s]
+Processing patents:  32%|███▏      | 100000/309449 [29:24<1:01:35, 56.68it/s]
+Processing patents:  32%|███▏      | 100000/309449 [29:44<1:01:35, 56.68it/s]
+Processing patents:  65%|██████▍   | 200000/309449 [58:44<32:08, 56.75it/s]  
+Processing patents:  65%|██████▍   | 200000/309449 [59:04<32:08, 56.75it/s]
+Processing patents:  65%|██████▍   | 200000/309449 [1:21:16<44:28, 41.01it/s]
 [IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
 [IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
 [IPKernelApp] WARNING | No such comm: 44e76d58-fbbe-4cf3-883c-c9089952992b
@@ -259,7 +264,16 @@ Processing patents:   0%|          | 0/309449 [00:00<?, ?it/s]Processing patent
 All 5 reference years for eval year 2012 present
 Processing patents for toEval
 Create toEval, iterate through all patents of current year 2012
-toEval - Processing patents - 2012:   0%|          | 0/344929 [00:00<?, ?it/s]toEval - Processing patents - 2012:  29%|██▉       | 100000/344929 [27:53<1:08:19, 59.74it/s]toEval - Processing patents - 2012:  29%|██▉       | 100000/344929 [28:08<1:08:19, 59.74it/s]toEval - Processing patents - 2012:  58%|█████▊    | 200000/344929 [56:22<40:55, 59.02it/s]  toEval - Processing patents - 2012:  58%|█████▊    | 200000/344929 [56:42<40:55, 59.02it/s]toEval - Processing patents - 2012:  87%|████████▋ | 300000/344929 [1:24:54<12:44, 58.74it/s]toEval - Processing patents - 2012:  87%|████████▋ | 300000/344929 [1:25:12<12:44, 58.74it/s]toEval - Processing patents - 2012: 100%|██████████| 344929/344929 [1:37:43<00:00, 58.66it/s]toEval - Processing patents - 2012: 100%|██████████| 344929/344929 [1:37:43<00:00, 58.82it/s]
+
+toEval - Processing patents - 2012:   0%|          | 0/344929 [00:00<?, ?it/s]
+toEval - Processing patents - 2012:  29%|██▉       | 100000/344929 [27:53<1:08:19, 59.74it/s]
+toEval - Processing patents - 2012:  29%|██▉       | 100000/344929 [28:08<1:08:19, 59.74it/s]
+toEval - Processing patents - 2012:  58%|█████▊    | 200000/344929 [56:22<40:55, 59.02it/s]  
+toEval - Processing patents - 2012:  58%|█████▊    | 200000/344929 [56:42<40:55, 59.02it/s]
+toEval - Processing patents - 2012:  87%|████████▋ | 300000/344929 [1:24:54<12:44, 58.74it/s]
+toEval - Processing patents - 2012:  87%|████████▋ | 300000/344929 [1:25:12<12:44, 58.74it/s]
+toEval - Processing patents - 2012: 100%|██████████| 344929/344929 [1:37:43<00:00, 58.66it/s]
+toEval - Processing patents - 2012: 100%|██████████| 344929/344929 [1:37:43<00:00, 58.82it/s]
 toEval done for G06F in 2012 
 toEval shape:  (40960, 9)
 Number of secondary IPC for G06F in 2012:  1218
@@ -294,15 +308,58 @@ toEval done for B32B in 2012
 toEval shape:  (3450, 9)
 Number of secondary IPC for B32B in 2012:  1678
 Iterating through patents of reference year 2007 for evalYear 2012
-Processing patents:   0%|          | 0/319809 [00:00<?, ?it/s]Processing patents:  31%|███▏      | 100000/319809 [29:14<1:04:16, 57.00it/s]Processing patents:  31%|███▏      | 100000/319809 [29:27<1:04:16, 57.00it/s]Processing patents:  63%|██████▎   | 200000/319809 [57:57<34:40, 57.60it/s]  Processing patents:  63%|██████▎   | 200000/319809 [58:17<34:40, 57.60it/s]Processing patents:  94%|█████████▍| 300000/319809 [1:25:49<05:38, 58.58it/s]Processing patents:  94%|█████████▍| 300000/319809 [1:26:07<05:38, 58.58it/s]Processing patents: 100%|██████████| 319809/319809 [1:31:22<00:00, 58.70it/s]Processing patents: 100%|██████████| 319809/319809 [1:31:22<00:00, 58.34it/s]
+
+Processing patents:   0%|          | 0/319809 [00:00<?, ?it/s]
+Processing patents:  31%|███▏      | 100000/319809 [29:14<1:04:16, 57.00it/s]
+Processing patents:  31%|███▏      | 100000/319809 [29:27<1:04:16, 57.00it/s]
+Processing patents:  63%|██████▎   | 200000/319809 [57:57<34:40, 57.60it/s]  
+Processing patents:  63%|██████▎   | 200000/319809 [58:17<34:40, 57.60it/s]
+Processing patents:  94%|█████████▍| 300000/319809 [1:25:49<05:38, 58.58it/s]
+Processing patents:  94%|█████████▍| 300000/319809 [1:26:07<05:38, 58.58it/s]
+Processing patents: 100%|██████████| 319809/319809 [1:31:22<00:00, 58.70it/s]
+Processing patents: 100%|██████████| 319809/319809 [1:31:22<00:00, 58.34it/s]
 Iterating through patents of reference year 2008 for evalYear 2012
-Processing patents:   0%|          | 0/314526 [00:00<?, ?it/s]Processing patents:  32%|███▏      | 100000/314526 [27:43<59:28, 60.12it/s]Processing patents:  32%|███▏      | 100000/314526 [27:54<59:28, 60.12it/s]Processing patents:  64%|██████▎   | 200000/314526 [56:27<32:25, 58.86it/s]Processing patents:  64%|██████▎   | 200000/314526 [56:44<32:25, 58.86it/s]Processing patents:  95%|█████████▌| 300000/314526 [1:27:43<04:18, 56.18it/s]Processing patents:  95%|█████████▌| 300000/314526 [1:27:59<04:18, 56.18it/s]Processing patents: 100%|██████████| 314526/314526 [1:32:14<00:00, 55.95it/s]Processing patents: 100%|██████████| 314526/314526 [1:32:14<00:00, 56.83it/s]
+
+Processing patents:   0%|          | 0/314526 [00:00<?, ?it/s]
+Processing patents:  32%|███▏      | 100000/314526 [27:43<59:28, 60.12it/s]
+Processing patents:  32%|███▏      | 100000/314526 [27:54<59:28, 60.12it/s]
+Processing patents:  64%|██████▎   | 200000/314526 [56:27<32:25, 58.86it/s]
+Processing patents:  64%|██████▎   | 200000/314526 [56:44<32:25, 58.86it/s]
+Processing patents:  95%|█████████▌| 300000/314526 [1:27:43<04:18, 56.18it/s]
+Processing patents:  95%|█████████▌| 300000/314526 [1:27:59<04:18, 56.18it/s]
+Processing patents: 100%|██████████| 314526/314526 [1:32:14<00:00, 55.95it/s]
+Processing patents: 100%|██████████| 314526/314526 [1:32:14<00:00, 56.83it/s]
 Iterating through patents of reference year 2009 for evalYear 2012
-Processing patents:   0%|          | 0/290832 [00:00<?, ?it/s]Processing patents:  34%|███▍      | 100000/290832 [30:44<58:40, 54.21it/s]Processing patents:  34%|███▍      | 100000/290832 [31:03<58:40, 54.21it/s]Processing patents:  69%|██████▉   | 200000/290832 [59:29<26:51, 56.36it/s]Processing patents:  69%|██████▉   | 200000/290832 [59:43<26:51, 56.36it/s]Processing patents: 100%|██████████| 290832/290832 [1:25:27<00:00, 57.19it/s]Processing patents: 100%|██████████| 290832/290832 [1:25:27<00:00, 56.72it/s]
+
+Processing patents:   0%|          | 0/290832 [00:00<?, ?it/s]
+Processing patents:  34%|███▍      | 100000/290832 [30:44<58:40, 54.21it/s]
+Processing patents:  34%|███▍      | 100000/290832 [31:03<58:40, 54.21it/s]
+Processing patents:  69%|██████▉   | 200000/290832 [59:29<26:51, 56.36it/s]
+Processing patents:  69%|██████▉   | 200000/290832 [59:43<26:51, 56.36it/s]
+Processing patents: 100%|██████████| 290832/290832 [1:25:27<00:00, 57.19it/s]
+Processing patents: 100%|██████████| 290832/290832 [1:25:27<00:00, 56.72it/s]
 Iterating through patents of reference year 2010 for evalYear 2012
-Processing patents:   0%|          | 0/304660 [00:00<?, ?it/s]Processing patents:  33%|███▎      | 100000/304660 [28:34<58:29, 58.32it/s]Processing patents:  33%|███▎      | 100000/304660 [28:45<58:29, 58.32it/s]Processing patents:  66%|██████▌   | 200000/304660 [56:49<29:42, 58.72it/s]Processing patents:  66%|██████▌   | 200000/304660 [57:05<29:42, 58.72it/s]Processing patents:  98%|█████████▊| 300000/304660 [1:25:28<01:19, 58.47it/s]Processing patents:  98%|█████████▊| 300000/304660 [1:25:45<01:19, 58.47it/s]Processing patents: 100%|██████████| 304660/304660 [1:26:47<00:00, 58.49it/s]Processing patents: 100%|██████████| 304660/304660 [1:26:47<00:00, 58.50it/s]
+
+Processing patents:   0%|          | 0/304660 [00:00<?, ?it/s]
+Processing patents:  33%|███▎      | 100000/304660 [28:34<58:29, 58.32it/s]
+Processing patents:  33%|███▎      | 100000/304660 [28:45<58:29, 58.32it/s]
+Processing patents:  66%|██████▌   | 200000/304660 [56:49<29:42, 58.72it/s]
+Processing patents:  66%|██████▌   | 200000/304660 [57:05<29:42, 58.72it/s]
+Processing patents:  98%|█████████▊| 300000/304660 [1:25:28<01:19, 58.47it/s]
+Processing patents:  98%|█████████▊| 300000/304660 [1:25:45<01:19, 58.47it/s]
+Processing patents: 100%|██████████| 304660/304660 [1:26:47<00:00, 58.49it/s]
+Processing patents: 100%|██████████| 304660/304660 [1:26:47<00:00, 58.50it/s]
 Iterating through patents of reference year 2011 for evalYear 2012
-Processing patents:   0%|          | 0/316045 [00:00<?, ?it/s]Processing patents:  32%|███▏      | 100000/316045 [28:26<1:01:25, 58.62it/s]Processing patents:  32%|███▏      | 100000/316045 [28:42<1:01:25, 58.62it/s]Processing patents:  63%|██████▎   | 200000/316045 [57:23<33:20, 57.99it/s]  Processing patents:  63%|██████▎   | 200000/316045 [57:42<33:20, 57.99it/s]Processing patents:  95%|█████████▍| 300000/316045 [1:26:56<04:40, 57.25it/s]Processing patents:  95%|█████████▍| 300000/316045 [1:27:12<04:40, 57.25it/s]Processing patents: 100%|██████████| 316045/316045 [1:31:45<00:00, 57.08it/s]Processing patents: 100%|██████████| 316045/316045 [1:31:45<00:00, 57.40it/s]
+
+Processing patents:   0%|          | 0/316045 [00:00<?, ?it/s]
+Processing patents:  32%|███▏      | 100000/316045 [28:26<1:01:25, 58.62it/s]
+Processing patents:  32%|███▏      | 100000/316045 [28:42<1:01:25, 58.62it/s]
+Processing patents:  63%|██████▎   | 200000/316045 [57:23<33:20, 57.99it/s]  
+Processing patents:  63%|██████▎   | 200000/316045 [57:42<33:20, 57.99it/s]
+Processing patents:  95%|█████████▍| 300000/316045 [1:26:56<04:40, 57.25it/s]
+Processing patents:  95%|█████████▍| 300000/316045 [1:27:12<04:40, 57.25it/s]
+Processing patents: 100%|██████████| 316045/316045 [1:31:45<00:00, 57.08it/s]
+Processing patents: 100%|██████████| 316045/316045 [1:31:45<00:00, 57.40it/s]
 ES and KS done for: 2012_2007_G06F
 ES and KS done for: 2012_2008_G06F
 ES and KS done for: 2012_2009_G06F
@@ -382,7 +439,16 @@ df_KS shape:  (21973, 10)
 df_ES shape:  (169203, 10)
 Processing patents for toEval
 Create toEval, iterate through all patents of current year 2013
-toEval - Processing patents - 2013:   0%|          | 0/364088 [00:00<?, ?it/s]toEval - Processing patents - 2013:  27%|██▋       | 100000/364088 [29:46<1:18:39, 55.96it/s]toEval - Processing patents - 2013:  27%|██▋       | 100000/364088 [30:00<1:18:39, 55.96it/s]toEval - Processing patents - 2013:  55%|█████▍    | 200000/364088 [1:00:02<49:19, 55.44it/s]toEval - Processing patents - 2013:  55%|█████▍    | 200000/364088 [1:00:21<49:19, 55.44it/s]toEval - Processing patents - 2013:  82%|████████▏ | 300000/364088 [1:30:40<19:26, 54.96it/s]toEval - Processing patents - 2013:  82%|████████▏ | 300000/364088 [1:30:51<19:26, 54.96it/s]toEval - Processing patents - 2013: 100%|██████████| 364088/364088 [1:50:06<00:00, 54.96it/s]toEval - Processing patents - 2013: 100%|██████████| 364088/364088 [1:50:06<00:00, 55.11it/s]
+
+toEval - Processing patents - 2013:   0%|          | 0/364088 [00:00<?, ?it/s]
+toEval - Processing patents - 2013:  27%|██▋       | 100000/364088 [29:46<1:18:39, 55.96it/s]
+toEval - Processing patents - 2013:  27%|██▋       | 100000/364088 [30:00<1:18:39, 55.96it/s]
+toEval - Processing patents - 2013:  55%|█████▍    | 200000/364088 [1:00:02<49:19, 55.44it/s]
+toEval - Processing patents - 2013:  55%|█████▍    | 200000/364088 [1:00:21<49:19, 55.44it/s]
+toEval - Processing patents - 2013:  82%|████████▏ | 300000/364088 [1:30:40<19:26, 54.96it/s]
+toEval - Processing patents - 2013:  82%|████████▏ | 300000/364088 [1:30:51<19:26, 54.96it/s]
+toEval - Processing patents - 2013: 100%|██████████| 364088/364088 [1:50:06<00:00, 54.96it/s]
+toEval - Processing patents - 2013: 100%|██████████| 364088/364088 [1:50:06<00:00, 55.11it/s]
 toEval done for G06F in 2013 
 toEval shape:  (33095, 9)
 Number of secondary IPC for G06F in 2013:  810
@@ -417,15 +483,58 @@ toEval done for B32B in 2013
 toEval shape:  (1246, 9)
 Number of secondary IPC for B32B in 2013:  386
 Iterating through patents of reference year 2008 for evalYear 2013
-Processing patents:   0%|          | 0/314526 [00:00<?, ?it/s]Processing patents:  32%|███▏      | 100000/314526 [32:49<1:10:24, 50.79it/s]Processing patents:  32%|███▏      | 100000/314526 [33:04<1:10:24, 50.79it/s]Processing patents:  64%|██████▎   | 200000/314526 [1:03:29<36:08, 52.82it/s]Processing patents:  64%|██████▎   | 200000/314526 [1:03:44<36:08, 52.82it/s]Processing patents:  95%|█████████▌| 300000/314526 [1:34:27<04:32, 53.27it/s]Processing patents:  95%|█████████▌| 300000/314526 [1:34:44<04:32, 53.27it/s]Processing patents: 100%|██████████| 314526/314526 [1:38:58<00:00, 53.30it/s]Processing patents: 100%|██████████| 314526/314526 [1:38:58<00:00, 52.97it/s]
+
+Processing patents:   0%|          | 0/314526 [00:00<?, ?it/s]
+Processing patents:  32%|███▏      | 100000/314526 [32:49<1:10:24, 50.79it/s]
+Processing patents:  32%|███▏      | 100000/314526 [33:04<1:10:24, 50.79it/s]
+Processing patents:  64%|██████▎   | 200000/314526 [1:03:29<36:08, 52.82it/s]
+Processing patents:  64%|██████▎   | 200000/314526 [1:03:44<36:08, 52.82it/s]
+Processing patents:  95%|█████████▌| 300000/314526 [1:34:27<04:32, 53.27it/s]
+Processing patents:  95%|█████████▌| 300000/314526 [1:34:44<04:32, 53.27it/s]
+Processing patents: 100%|██████████| 314526/314526 [1:38:58<00:00, 53.30it/s]
+Processing patents: 100%|██████████| 314526/314526 [1:38:58<00:00, 52.97it/s]
 Iterating through patents of reference year 2009 for evalYear 2013
-Processing patents:   0%|          | 0/290832 [00:00<?, ?it/s]Processing patents:  34%|███▍      | 100000/290832 [31:07<59:23, 53.55it/s]Processing patents:  34%|███▍      | 100000/290832 [31:26<59:23, 53.55it/s]Processing patents:  69%|██████▉   | 200000/290832 [1:02:37<28:28, 53.16it/s]Processing patents:  69%|██████▉   | 200000/290832 [1:02:56<28:28, 53.16it/s]Processing patents: 100%|██████████| 290832/290832 [1:31:44<00:00, 52.66it/s]Processing patents: 100%|██████████| 290832/290832 [1:31:44<00:00, 52.84it/s]
+
+Processing patents:   0%|          | 0/290832 [00:00<?, ?it/s]
+Processing patents:  34%|███▍      | 100000/290832 [31:07<59:23, 53.55it/s]
+Processing patents:  34%|███▍      | 100000/290832 [31:26<59:23, 53.55it/s]
+Processing patents:  69%|██████▉   | 200000/290832 [1:02:37<28:28, 53.16it/s]
+Processing patents:  69%|██████▉   | 200000/290832 [1:02:56<28:28, 53.16it/s]
+Processing patents: 100%|██████████| 290832/290832 [1:31:44<00:00, 52.66it/s]
+Processing patents: 100%|██████████| 290832/290832 [1:31:44<00:00, 52.84it/s]
 Iterating through patents of reference year 2010 for evalYear 2013
-Processing patents:   0%|          | 0/304660 [00:00<?, ?it/s]Processing patents:  33%|███▎      | 100000/304660 [34:47<1:11:11, 47.91it/s]Processing patents:  33%|███▎      | 100000/304660 [35:06<1:11:11, 47.91it/s]Processing patents:  66%|██████▌   | 200000/304660 [1:09:03<36:05, 48.34it/s]Processing patents:  66%|██████▌   | 200000/304660 [1:09:16<36:05, 48.34it/s]Processing patents:  98%|█████████▊| 300000/304660 [1:41:53<01:34, 49.41it/s]Processing patents:  98%|█████████▊| 300000/304660 [1:42:06<01:34, 49.41it/s]Processing patents: 100%|██████████| 304660/304660 [1:43:23<00:00, 49.47it/s]Processing patents: 100%|██████████| 304660/304660 [1:43:23<00:00, 49.11it/s]
+
+Processing patents:   0%|          | 0/304660 [00:00<?, ?it/s]
+Processing patents:  33%|███▎      | 100000/304660 [34:47<1:11:11, 47.91it/s]
+Processing patents:  33%|███▎      | 100000/304660 [35:06<1:11:11, 47.91it/s]
+Processing patents:  66%|██████▌   | 200000/304660 [1:09:03<36:05, 48.34it/s]
+Processing patents:  66%|██████▌   | 200000/304660 [1:09:16<36:05, 48.34it/s]
+Processing patents:  98%|█████████▊| 300000/304660 [1:41:53<01:34, 49.41it/s]
+Processing patents:  98%|█████████▊| 300000/304660 [1:42:06<01:34, 49.41it/s]
+Processing patents: 100%|██████████| 304660/304660 [1:43:23<00:00, 49.47it/s]
+Processing patents: 100%|██████████| 304660/304660 [1:43:23<00:00, 49.11it/s]
 Iterating through patents of reference year 2011 for evalYear 2013
-Processing patents:   0%|          | 0/316045 [00:00<?, ?it/s]Processing patents:  32%|███▏      | 100000/316045 [31:58<1:09:03, 52.14it/s]Processing patents:  32%|███▏      | 100000/316045 [32:08<1:09:03, 52.14it/s]Processing patents:  63%|██████▎   | 200000/316045 [1:03:57<37:06, 52.11it/s]Processing patents:  63%|██████▎   | 200000/316045 [1:04:08<37:06, 52.11it/s]Processing patents:  95%|█████████▍| 300000/316045 [1:35:12<05:04, 52.66it/s]Processing patents:  95%|█████████▍| 300000/316045 [1:35:28<05:04, 52.66it/s]Processing patents: 100%|██████████| 316045/316045 [1:40:36<00:00, 52.35it/s]Processing patents: 100%|██████████| 316045/316045 [1:40:36<00:00, 52.35it/s]
+
+Processing patents:   0%|          | 0/316045 [00:00<?, ?it/s]
+Processing patents:  32%|███▏      | 100000/316045 [31:58<1:09:03, 52.14it/s]
+Processing patents:  32%|███▏      | 100000/316045 [32:08<1:09:03, 52.14it/s]
+Processing patents:  63%|██████▎   | 200000/316045 [1:03:57<37:06, 52.11it/s]
+Processing patents:  63%|██████▎   | 200000/316045 [1:04:08<37:06, 52.11it/s]
+Processing patents:  95%|█████████▍| 300000/316045 [1:35:12<05:04, 52.66it/s]
+Processing patents:  95%|█████████▍| 300000/316045 [1:35:28<05:04, 52.66it/s]
+Processing patents: 100%|██████████| 316045/316045 [1:40:36<00:00, 52.35it/s]
+Processing patents: 100%|██████████| 316045/316045 [1:40:36<00:00, 52.35it/s]
 Iterating through patents of reference year 2012 for evalYear 2013
-Processing patents:   0%|          | 0/344929 [00:00<?, ?it/s]Processing patents:  29%|██▉       | 100000/344929 [31:28<1:17:06, 52.94it/s]Processing patents:  29%|██▉       | 100000/344929 [31:45<1:17:06, 52.94it/s]Processing patents:  58%|█████▊    | 200000/344929 [1:02:28<45:12, 53.43it/s]Processing patents:  58%|█████▊    | 200000/344929 [1:02:45<45:12, 53.43it/s]Processing patents:  87%|████████▋ | 300000/344929 [1:33:58<14:04, 53.19it/s]Processing patents:  87%|████████▋ | 300000/344929 [1:34:16<14:04, 53.19it/s]Processing patents: 100%|██████████| 344929/344929 [1:48:12<00:00, 53.05it/s]Processing patents: 100%|██████████| 344929/344929 [1:48:12<00:00, 53.12it/s]
+
+Processing patents:   0%|          | 0/344929 [00:00<?, ?it/s]
+Processing patents:  29%|██▉       | 100000/344929 [31:28<1:17:06, 52.94it/s]
+Processing patents:  29%|██▉       | 100000/344929 [31:45<1:17:06, 52.94it/s]
+Processing patents:  58%|█████▊    | 200000/344929 [1:02:28<45:12, 53.43it/s]
+Processing patents:  58%|█████▊    | 200000/344929 [1:02:45<45:12, 53.43it/s]
+Processing patents:  87%|████████▋ | 300000/344929 [1:33:58<14:04, 53.19it/s]
+Processing patents:  87%|████████▋ | 300000/344929 [1:34:16<14:04, 53.19it/s]
+Processing patents: 100%|██████████| 344929/344929 [1:48:12<00:00, 53.05it/s]
+Processing patents: 100%|██████████| 344929/344929 [1:48:12<00:00, 53.12it/s]
 ES and KS done for: 2013_2008_G06F
 ES and KS done for: 2013_2009_G06F
 ES and KS done for: 2013_2010_G06F
@@ -505,7 +614,16 @@ df_KS shape:  (21465, 10)
 df_ES shape:  (54386, 10)
 Processing patents for toEval
 Create toEval, iterate through all patents of current year 2014
-toEval - Processing patents - 2014:   0%|          | 0/376384 [00:00<?, ?it/s]toEval - Processing patents - 2014:  27%|██▋       | 100000/376384 [33:35<1:32:49, 49.63it/s]toEval - Processing patents - 2014:  27%|██▋       | 100000/376384 [33:48<1:32:49, 49.63it/s]toEval - Processing patents - 2014:  53%|█████▎    | 200000/376384 [1:07:09<59:13, 49.63it/s]toEval - Processing patents - 2014:  53%|█████▎    | 200000/376384 [1:07:28<59:13, 49.63it/s]toEval - Processing patents - 2014:  80%|███████▉  | 300000/376384 [1:41:09<25:47, 49.35it/s]toEval - Processing patents - 2014:  80%|███████▉  | 300000/376384 [1:41:28<25:47, 49.35it/s]toEval - Processing patents - 2014: 100%|██████████| 376384/376384 [2:06:48<00:00, 49.45it/s]toEval - Processing patents - 2014: 100%|██████████| 376384/376384 [2:06:48<00:00, 49.47it/s]
+
+toEval - Processing patents - 2014:   0%|          | 0/376384 [00:00<?, ?it/s]
+toEval - Processing patents - 2014:  27%|██▋       | 100000/376384 [33:35<1:32:49, 49.63it/s]
+toEval - Processing patents - 2014:  27%|██▋       | 100000/376384 [33:48<1:32:49, 49.63it/s]
+toEval - Processing patents - 2014:  53%|█████▎    | 200000/376384 [1:07:09<59:13, 49.63it/s]
+toEval - Processing patents - 2014:  53%|█████▎    | 200000/376384 [1:07:28<59:13, 49.63it/s]
+toEval - Processing patents - 2014:  80%|███████▉  | 300000/376384 [1:41:09<25:47, 49.35it/s]
+toEval - Processing patents - 2014:  80%|███████▉  | 300000/376384 [1:41:28<25:47, 49.35it/s]
+toEval - Processing patents - 2014: 100%|██████████| 376384/376384 [2:06:48<00:00, 49.45it/s]
+toEval - Processing patents - 2014: 100%|██████████| 376384/376384 [2:06:48<00:00, 49.47it/s]
 toEval done for G06F in 2014 
 toEval shape:  (28378, 9)
 Number of secondary IPC for G06F in 2014:  1564
@@ -540,15 +658,58 @@ toEval done for B32B in 2014
 toEval shape:  (1010, 9)
 Number of secondary IPC for B32B in 2014:  514
 Iterating through patents of reference year 2009 for evalYear 2014
-Processing patents:   0%|          | 0/290832 [00:00<?, ?it/s]Processing patents:  34%|███▍      | 100000/290832 [33:28<1:03:53, 49.78it/s]Processing patents:  34%|███▍      | 100000/290832 [33:45<1:03:53, 49.78it/s]Processing patents:  69%|██████▉   | 200000/290832 [1:06:43<30:16, 49.99it/s]Processing patents:  69%|██████▉   | 200000/290832 [1:06:55<30:16, 49.99it/s]Processing patents: 100%|██████████| 290832/290832 [1:34:50<00:00, 51.59it/s]Processing patents: 100%|██████████| 290832/290832 [1:34:50<00:00, 51.11it/s]
+
+Processing patents:   0%|          | 0/290832 [00:00<?, ?it/s]
+Processing patents:  34%|███▍      | 100000/290832 [33:28<1:03:53, 49.78it/s]
+Processing patents:  34%|███▍      | 100000/290832 [33:45<1:03:53, 49.78it/s]
+Processing patents:  69%|██████▉   | 200000/290832 [1:06:43<30:16, 49.99it/s]
+Processing patents:  69%|██████▉   | 200000/290832 [1:06:55<30:16, 49.99it/s]
+Processing patents: 100%|██████████| 290832/290832 [1:34:50<00:00, 51.59it/s]
+Processing patents: 100%|██████████| 290832/290832 [1:34:50<00:00, 51.11it/s]
 Iterating through patents of reference year 2010 for evalYear 2014
-Processing patents:   0%|          | 0/304660 [00:00<?, ?it/s]Processing patents:  33%|███▎      | 100000/304660 [29:00<59:22, 57.44it/s]Processing patents:  33%|███▎      | 100000/304660 [29:19<59:22, 57.44it/s]Processing patents:  66%|██████▌   | 200000/304660 [56:28<29:24, 59.31it/s]Processing patents:  66%|██████▌   | 200000/304660 [56:39<29:24, 59.31it/s]Processing patents:  98%|█████████▊| 300000/304660 [1:24:26<01:18, 59.45it/s]Processing patents:  98%|█████████▊| 300000/304660 [1:24:39<01:18, 59.45it/s]Processing patents: 100%|██████████| 304660/304660 [1:25:44<00:00, 59.45it/s]Processing patents: 100%|██████████| 304660/304660 [1:25:44<00:00, 59.22it/s]
+
+Processing patents:   0%|          | 0/304660 [00:00<?, ?it/s]
+Processing patents:  33%|███▎      | 100000/304660 [29:00<59:22, 57.44it/s]
+Processing patents:  33%|███▎      | 100000/304660 [29:19<59:22, 57.44it/s]
+Processing patents:  66%|██████▌   | 200000/304660 [56:28<29:24, 59.31it/s]
+Processing patents:  66%|██████▌   | 200000/304660 [56:39<29:24, 59.31it/s]
+Processing patents:  98%|█████████▊| 300000/304660 [1:24:26<01:18, 59.45it/s]
+Processing patents:  98%|█████████▊| 300000/304660 [1:24:39<01:18, 59.45it/s]
+Processing patents: 100%|██████████| 304660/304660 [1:25:44<00:00, 59.45it/s]
+Processing patents: 100%|██████████| 304660/304660 [1:25:44<00:00, 59.22it/s]
 Iterating through patents of reference year 2011 for evalYear 2014
-Processing patents:   0%|          | 0/316045 [00:00<?, ?it/s]Processing patents:  32%|███▏      | 100000/316045 [28:29<1:01:33, 58.50it/s]Processing patents:  32%|███▏      | 100000/316045 [28:45<1:01:33, 58.50it/s]Processing patents:  63%|██████▎   | 200000/316045 [57:17<33:16, 58.12it/s]  Processing patents:  63%|██████▎   | 200000/316045 [57:35<33:16, 58.12it/s]Processing patents:  95%|█████████▍| 300000/316045 [1:26:16<04:37, 57.84it/s]Processing patents:  95%|█████████▍| 300000/316045 [1:26:35<04:37, 57.84it/s]Processing patents: 100%|██████████| 316045/316045 [1:30:50<00:00, 57.91it/s]Processing patents: 100%|██████████| 316045/316045 [1:30:50<00:00, 57.98it/s]
+
+Processing patents:   0%|          | 0/316045 [00:00<?, ?it/s]
+Processing patents:  32%|███▏      | 100000/316045 [28:29<1:01:33, 58.50it/s]
+Processing patents:  32%|███▏      | 100000/316045 [28:45<1:01:33, 58.50it/s]
+Processing patents:  63%|██████▎   | 200000/316045 [57:17<33:16, 58.12it/s]  
+Processing patents:  63%|██████▎   | 200000/316045 [57:35<33:16, 58.12it/s]
+Processing patents:  95%|█████████▍| 300000/316045 [1:26:16<04:37, 57.84it/s]
+Processing patents:  95%|█████████▍| 300000/316045 [1:26:35<04:37, 57.84it/s]
+Processing patents: 100%|██████████| 316045/316045 [1:30:50<00:00, 57.91it/s]
+Processing patents: 100%|██████████| 316045/316045 [1:30:50<00:00, 57.98it/s]
 Iterating through patents of reference year 2012 for evalYear 2014
-Processing patents:   0%|          | 0/344929 [00:00<?, ?it/s]Processing patents:  29%|██▉       | 100000/344929 [28:13<1:09:08, 59.04it/s]Processing patents:  29%|██▉       | 100000/344929 [28:29<1:09:08, 59.04it/s]Processing patents:  58%|█████▊    | 200000/344929 [56:51<41:15, 58.55it/s]  Processing patents:  58%|█████▊    | 200000/344929 [57:09<41:15, 58.55it/s]Processing patents:  87%|████████▋ | 300000/344929 [1:25:49<12:53, 58.08it/s]Processing patents:  87%|████████▋ | 300000/344929 [1:26:09<12:53, 58.08it/s]Processing patents: 100%|██████████| 344929/344929 [1:39:39<00:00, 57.14it/s]Processing patents: 100%|██████████| 344929/344929 [1:39:39<00:00, 57.68it/s]
+
+Processing patents:   0%|          | 0/344929 [00:00<?, ?it/s]
+Processing patents:  29%|██▉       | 100000/344929 [28:13<1:09:08, 59.04it/s]
+Processing patents:  29%|██▉       | 100000/344929 [28:29<1:09:08, 59.04it/s]
+Processing patents:  58%|█████▊    | 200000/344929 [56:51<41:15, 58.55it/s]  
+Processing patents:  58%|█████▊    | 200000/344929 [57:09<41:15, 58.55it/s]
+Processing patents:  87%|████████▋ | 300000/344929 [1:25:49<12:53, 58.08it/s]
+Processing patents:  87%|████████▋ | 300000/344929 [1:26:09<12:53, 58.08it/s]
+Processing patents: 100%|██████████| 344929/344929 [1:39:39<00:00, 57.14it/s]
+Processing patents: 100%|██████████| 344929/344929 [1:39:39<00:00, 57.68it/s]
 Iterating through patents of reference year 2013 for evalYear 2014
-Processing patents:   0%|          | 0/364088 [00:00<?, ?it/s]Processing patents:  27%|██▋       | 100000/364088 [28:15<1:14:37, 58.98it/s]Processing patents:  27%|██▋       | 100000/364088 [28:32<1:14:37, 58.98it/s]Processing patents:  55%|█████▍    | 200000/364088 [56:30<46:21, 58.99it/s]  Processing patents:  55%|█████▍    | 200000/364088 [56:42<46:21, 58.99it/s]Processing patents:  82%|████████▏ | 300000/364088 [1:24:41<18:05, 59.06it/s]Processing patents:  82%|████████▏ | 300000/364088 [1:24:52<18:05, 59.06it/s]Processing patents: 100%|██████████| 364088/364088 [1:42:58<00:00, 58.87it/s]Processing patents: 100%|██████████| 364088/364088 [1:42:58<00:00, 58.93it/s]
+
+Processing patents:   0%|          | 0/364088 [00:00<?, ?it/s]
+Processing patents:  27%|██▋       | 100000/364088 [28:15<1:14:37, 58.98it/s]
+Processing patents:  27%|██▋       | 100000/364088 [28:32<1:14:37, 58.98it/s]
+Processing patents:  55%|█████▍    | 200000/364088 [56:30<46:21, 58.99it/s]  
+Processing patents:  55%|█████▍    | 200000/364088 [56:42<46:21, 58.99it/s]
+Processing patents:  82%|████████▏ | 300000/364088 [1:24:41<18:05, 59.06it/s]
+Processing patents:  82%|████████▏ | 300000/364088 [1:24:52<18:05, 59.06it/s]
+Processing patents: 100%|██████████| 364088/364088 [1:42:58<00:00, 58.87it/s]
+Processing patents: 100%|██████████| 364088/364088 [1:42:58<00:00, 58.93it/s]
 ES and KS done for: 2014_2009_G06F
 ES and KS done for: 2014_2010_G06F
 ES and KS done for: 2014_2011_G06F
@@ -628,7 +789,16 @@ df_KS shape:  (18114, 10)
 df_ES shape:  (69570, 10)
 Processing patents for toEval
 Create toEval, iterate through all patents of current year 2015
-toEval - Processing patents - 2015:   0%|          | 0/374739 [00:00<?, ?it/s]toEval - Processing patents - 2015:  27%|██▋       | 100000/374739 [27:54<1:16:41, 59.71it/s]toEval - Processing patents - 2015:  27%|██▋       | 100000/374739 [28:05<1:16:41, 59.71it/s]toEval - Processing patents - 2015:  53%|█████▎    | 200000/374739 [55:41<48:37, 59.89it/s]  toEval - Processing patents - 2015:  53%|█████▎    | 200000/374739 [55:55<48:37, 59.89it/s]toEval - Processing patents - 2015:  80%|████████  | 300000/374739 [1:24:01<20:58, 59.39it/s]toEval - Processing patents - 2015:  80%|████████  | 300000/374739 [1:24:15<20:58, 59.39it/s]toEval - Processing patents - 2015: 100%|██████████| 374739/374739 [1:45:37<00:00, 58.81it/s]toEval - Processing patents - 2015: 100%|██████████| 374739/374739 [1:45:37<00:00, 59.13it/s]
+
+toEval - Processing patents - 2015:   0%|          | 0/374739 [00:00<?, ?it/s]
+toEval - Processing patents - 2015:  27%|██▋       | 100000/374739 [27:54<1:16:41, 59.71it/s]
+toEval - Processing patents - 2015:  27%|██▋       | 100000/374739 [28:05<1:16:41, 59.71it/s]
+toEval - Processing patents - 2015:  53%|█████▎    | 200000/374739 [55:41<48:37, 59.89it/s]  
+toEval - Processing patents - 2015:  53%|█████▎    | 200000/374739 [55:55<48:37, 59.89it/s]
+toEval - Processing patents - 2015:  80%|████████  | 300000/374739 [1:24:01<20:58, 59.39it/s]
+toEval - Processing patents - 2015:  80%|████████  | 300000/374739 [1:24:15<20:58, 59.39it/s]
+toEval - Processing patents - 2015: 100%|██████████| 374739/374739 [1:45:37<00:00, 58.81it/s]
+toEval - Processing patents - 2015: 100%|██████████| 374739/374739 [1:45:37<00:00, 59.13it/s]
 toEval done for G06F in 2015 
 toEval shape:  (21100, 9)
 Number of secondary IPC for G06F in 2015:  1644
@@ -663,15 +833,60 @@ toEval done for B32B in 2015
 toEval shape:  (661, 9)
 Number of secondary IPC for B32B in 2015:  503
 Iterating through patents of reference year 2010 for evalYear 2015
-Processing patents:   0%|          | 0/304660 [00:00<?, ?it/s]Processing patents:  33%|███▎      | 100000/304660 [29:45<1:00:53, 56.02it/s]Processing patents:  33%|███▎      | 100000/304660 [29:59<1:00:53, 56.02it/s]Processing patents:  66%|██████▌   | 200000/304660 [58:55<30:46, 56.67it/s]  Processing patents:  66%|██████▌   | 200000/304660 [59:09<30:46, 56.67it/s]Processing patents:  98%|█████████▊| 300000/304660 [1:27:57<01:21, 57.01it/s]Processing patents:  98%|█████████▊| 300000/304660 [1:28:09<01:21, 57.01it/s]Processing patents: 100%|██████████| 304660/304660 [1:29:15<00:00, 57.07it/s]Processing patents: 100%|██████████| 304660/304660 [1:29:15<00:00, 56.89it/s]
+
+Processing patents:   0%|          | 0/304660 [00:00<?, ?it/s]
+Processing patents:  33%|███▎      | 100000/304660 [29:45<1:00:53, 56.02it/s]
+Processing patents:  33%|███▎      | 100000/304660 [29:59<1:00:53, 56.02it/s]
+Processing patents:  66%|██████▌   | 200000/304660 [58:55<30:46, 56.67it/s]  
+Processing patents:  66%|██████▌   | 200000/304660 [59:09<30:46, 56.67it/s]
+Processing patents:  98%|█████████▊| 300000/304660 [1:27:57<01:21, 57.01it/s]
+Processing patents:  98%|█████████▊| 300000/304660 [1:28:09<01:21, 57.01it/s]
+Processing patents: 100%|██████████| 304660/304660 [1:29:15<00:00, 57.07it/s]
+Processing patents: 100%|██████████| 304660/304660 [1:29:15<00:00, 56.89it/s]
 Iterating through patents of reference year 2011 for evalYear 2015
-Processing patents:   0%|          | 0/316045 [00:00<?, ?it/s]Processing patents:  32%|███▏      | 100000/316045 [28:55<1:02:29, 57.62it/s]Processing patents:  32%|███▏      | 100000/316045 [29:08<1:02:29, 57.62it/s]Processing patents:  63%|██████▎   | 200000/316045 [57:54<33:36, 57.56it/s]  Processing patents:  63%|██████▎   | 200000/316045 [58:08<33:36, 57.56it/s]Processing patents:  95%|█████████▍| 300000/316045 [1:27:09<04:40, 57.29it/s]Processing patents:  95%|█████████▍| 300000/316045 [1:27:28<04:40, 57.29it/s]Processing patents: 100%|██████████| 316045/316045 [1:31:47<00:00, 57.33it/s]Processing patents: 100%|██████████| 316045/316045 [1:31:47<00:00, 57.39it/s]
+
+Processing patents:   0%|          | 0/316045 [00:00<?, ?it/s]
+Processing patents:  32%|███▏      | 100000/316045 [28:55<1:02:29, 57.62it/s]
+Processing patents:  32%|███▏      | 100000/316045 [29:08<1:02:29, 57.62it/s]
+Processing patents:  63%|██████▎   | 200000/316045 [57:54<33:36, 57.56it/s]  
+Processing patents:  63%|██████▎   | 200000/316045 [58:08<33:36, 57.56it/s]
+Processing patents:  95%|█████████▍| 300000/316045 [1:27:09<04:40, 57.29it/s]
+Processing patents:  95%|█████████▍| 300000/316045 [1:27:28<04:40, 57.29it/s]
+Processing patents: 100%|██████████| 316045/316045 [1:31:47<00:00, 57.33it/s]
+Processing patents: 100%|██████████| 316045/316045 [1:31:47<00:00, 57.39it/s]
 Iterating through patents of reference year 2012 for evalYear 2015
-Processing patents:   0%|          | 0/344929 [00:00<?, ?it/s]Processing patents:  29%|██▉       | 100000/344929 [28:50<1:10:38, 57.78it/s]Processing patents:  29%|██▉       | 100000/344929 [29:01<1:10:38, 57.78it/s]Processing patents:  58%|█████▊    | 200000/344929 [58:16<42:18, 57.10it/s]  Processing patents:  58%|█████▊    | 200000/344929 [58:31<42:18, 57.10it/s]Processing patents:  87%|████████▋ | 300000/344929 [1:26:28<12:54, 58.00it/s]Processing patents:  87%|████████▋ | 300000/344929 [1:26:41<12:54, 58.00it/s]Processing patents: 100%|██████████| 344929/344929 [1:38:58<00:00, 58.42it/s]Processing patents: 100%|██████████| 344929/344929 [1:38:58<00:00, 58.09it/s]
+
+Processing patents:   0%|          | 0/344929 [00:00<?, ?it/s]
+Processing patents:  29%|██▉       | 100000/344929 [28:50<1:10:38, 57.78it/s]
+Processing patents:  29%|██▉       | 100000/344929 [29:01<1:10:38, 57.78it/s]
+Processing patents:  58%|█████▊    | 200000/344929 [58:16<42:18, 57.10it/s]  
+Processing patents:  58%|█████▊    | 200000/344929 [58:31<42:18, 57.10it/s]
+Processing patents:  87%|████████▋ | 300000/344929 [1:26:28<12:54, 58.00it/s]
+Processing patents:  87%|████████▋ | 300000/344929 [1:26:41<12:54, 58.00it/s]
+Processing patents: 100%|██████████| 344929/344929 [1:38:58<00:00, 58.42it/s]
+Processing patents: 100%|██████████| 344929/344929 [1:38:58<00:00, 58.09it/s]
 Iterating through patents of reference year 2013 for evalYear 2015
-Processing patents:   0%|          | 0/364088 [00:00<?, ?it/s]Processing patents:  27%|██▋       | 100000/364088 [28:27<1:15:08, 58.58it/s]Processing patents:  27%|██▋       | 100000/364088 [28:46<1:15:08, 58.58it/s]Processing patents:  55%|█████▍    | 200000/364088 [56:40<46:27, 58.87it/s]  Processing patents:  55%|█████▍    | 200000/364088 [56:56<46:27, 58.87it/s]Processing patents:  82%|████████▏ | 300000/364088 [1:25:02<18:09, 58.81it/s]Processing patents:  82%|████████▏ | 300000/364088 [1:25:16<18:09, 58.81it/s]Processing patents: 100%|██████████| 364088/364088 [1:43:06<00:00, 58.91it/s]Processing patents: 100%|██████████| 364088/364088 [1:43:06<00:00, 58.86it/s]
+
+Processing patents:   0%|          | 0/364088 [00:00<?, ?it/s]
+Processing patents:  27%|██▋       | 100000/364088 [28:27<1:15:08, 58.58it/s]
+Processing patents:  27%|██▋       | 100000/364088 [28:46<1:15:08, 58.58it/s]
+Processing patents:  55%|█████▍    | 200000/364088 [56:40<46:27, 58.87it/s]  
+Processing patents:  55%|█████▍    | 200000/364088 [56:56<46:27, 58.87it/s]
+Processing patents:  82%|████████▏ | 300000/364088 [1:25:02<18:09, 58.81it/s]
+Processing patents:  82%|████████▏ | 300000/364088 [1:25:16<18:09, 58.81it/s]
+Processing patents: 100%|██████████| 364088/364088 [1:43:06<00:00, 58.91it/s]
+Processing patents: 100%|██████████| 364088/364088 [1:43:06<00:00, 58.86it/s]
 Iterating through patents of reference year 2014 for evalYear 2015
-Processing patents:   0%|          | 0/376384 [00:00<?, ?it/s]Processing patents:  27%|██▋       | 100000/376384 [28:49<1:19:40, 57.81it/s]Processing patents:  27%|██▋       | 100000/376384 [29:02<1:19:40, 57.81it/s]Processing patents:  53%|█████▎    | 200000/376384 [57:40<50:51, 57.80it/s]  Processing patents:  53%|█████▎    | 200000/376384 [57:52<50:51, 57.80it/s]Processing patents:  80%|███████▉  | 300000/376384 [1:25:44<21:45, 58.51it/s]Processing patents:  80%|███████▉  | 300000/376384 [1:26:03<21:45, 58.51it/s]Processing patents: 100%|██████████| 376384/376384 [1:46:43<00:00, 59.21it/s]Processing patents: 100%|██████████| 376384/376384 [1:46:43<00:00, 58.78it/s]
+
+Processing patents:   0%|          | 0/376384 [00:00<?, ?it/s]
+Processing patents:  27%|██▋       | 100000/376384 [28:49<1:19:40, 57.81it/s]
+Processing patents:  27%|██▋       | 100000/376384 [29:02<1:19:40, 57.81it/s]
+Processing patents:  53%|█████▎    | 200000/376384 [57:40<50:51, 57.80it/s]  
+Processing patents:  53%|█████▎    | 200000/376384 [57:52<50:51, 57.80it/s]
+Processing patents:  80%|███████▉  | 300000/376384 [1:25:44<21:45, 58.51it/s]
+Processing patents:  80%|███████▉  | 300000/376384 [1:26:03<21:45, 58.51it/s]
+Processing patents: 100%|██████████| 376384/376384 [1:46:43<00:00, 59.21it/s]
+Processing patents: 100%|██████████| 376384/376384 [1:46:43<00:00, 58.78it/s]
 ES and KS done for: 2015_2010_G06F
 ES and KS done for: 2015_2011_G06F
 ES and KS done for: 2015_2012_G06F
@@ -737,15 +952,60 @@ Autosaving every 5 seconds
 All 5 reference years for eval year 2015 present
 toEval already done for year 2015
 Iterating through patents of reference year 2010 for evalYear 2015
-Processing patents:   0%|          | 0/304660 [00:00<?, ?it/s]Processing patents:  33%|███▎      | 100000/304660 [27:34<56:26, 60.43it/s]Processing patents:  33%|███▎      | 100000/304660 [27:50<56:26, 60.43it/s]Processing patents:  66%|██████▌   | 200000/304660 [56:05<29:26, 59.25it/s]Processing patents:  66%|██████▌   | 200000/304660 [56:20<29:26, 59.25it/s]Processing patents:  98%|█████████▊| 300000/304660 [1:24:08<01:18, 59.34it/s]Processing patents:  98%|█████████▊| 300000/304660 [1:24:20<01:18, 59.34it/s]Processing patents: 100%|██████████| 304660/304660 [1:25:26<00:00, 59.33it/s]Processing patents: 100%|██████████| 304660/304660 [1:25:26<00:00, 59.42it/s]
+
+Processing patents:   0%|          | 0/304660 [00:00<?, ?it/s]
+Processing patents:  33%|███▎      | 100000/304660 [27:34<56:26, 60.43it/s]
+Processing patents:  33%|███▎      | 100000/304660 [27:50<56:26, 60.43it/s]
+Processing patents:  66%|██████▌   | 200000/304660 [56:05<29:26, 59.25it/s]
+Processing patents:  66%|██████▌   | 200000/304660 [56:20<29:26, 59.25it/s]
+Processing patents:  98%|█████████▊| 300000/304660 [1:24:08<01:18, 59.34it/s]
+Processing patents:  98%|█████████▊| 300000/304660 [1:24:20<01:18, 59.34it/s]
+Processing patents: 100%|██████████| 304660/304660 [1:25:26<00:00, 59.33it/s]
+Processing patents: 100%|██████████| 304660/304660 [1:25:26<00:00, 59.42it/s]
 Iterating through patents of reference year 2011 for evalYear 2015
-Processing patents:   0%|          | 0/316045 [00:00<?, ?it/s]Processing patents:  32%|███▏      | 100000/316045 [30:25<1:05:44, 54.77it/s]Processing patents:  32%|███▏      | 100000/316045 [30:40<1:05:44, 54.77it/s]Processing patents:  63%|██████▎   | 200000/316045 [1:01:01<35:25, 54.60it/s]Processing patents:  63%|██████▎   | 200000/316045 [1:01:20<35:25, 54.60it/s]Processing patents:  95%|█████████▍| 300000/316045 [1:30:26<04:49, 55.52it/s]Processing patents:  95%|█████████▍| 300000/316045 [1:30:40<04:49, 55.52it/s]Processing patents: 100%|██████████| 316045/316045 [1:35:16<00:00, 55.50it/s]Processing patents: 100%|██████████| 316045/316045 [1:35:16<00:00, 55.29it/s]
+
+Processing patents:   0%|          | 0/316045 [00:00<?, ?it/s]
+Processing patents:  32%|███▏      | 100000/316045 [30:25<1:05:44, 54.77it/s]
+Processing patents:  32%|███▏      | 100000/316045 [30:40<1:05:44, 54.77it/s]
+Processing patents:  63%|██████▎   | 200000/316045 [1:01:01<35:25, 54.60it/s]
+Processing patents:  63%|██████▎   | 200000/316045 [1:01:20<35:25, 54.60it/s]
+Processing patents:  95%|█████████▍| 300000/316045 [1:30:26<04:49, 55.52it/s]
+Processing patents:  95%|█████████▍| 300000/316045 [1:30:40<04:49, 55.52it/s]
+Processing patents: 100%|██████████| 316045/316045 [1:35:16<00:00, 55.50it/s]
+Processing patents: 100%|██████████| 316045/316045 [1:35:16<00:00, 55.29it/s]
 Iterating through patents of reference year 2012 for evalYear 2015
-Processing patents:   0%|          | 0/344929 [00:00<?, ?it/s]Processing patents:  29%|██▉       | 100000/344929 [30:10<1:13:53, 55.24it/s]Processing patents:  29%|██▉       | 100000/344929 [30:20<1:13:53, 55.24it/s]Processing patents:  58%|█████▊    | 200000/344929 [59:53<43:20, 55.72it/s]  Processing patents:  58%|█████▊    | 200000/344929 [1:00:10<43:20, 55.72it/s]Processing patents:  87%|████████▋ | 300000/344929 [1:27:06<12:52, 58.12it/s]Processing patents:  87%|████████▋ | 300000/344929 [1:27:20<12:52, 58.12it/s]Processing patents: 100%|██████████| 344929/344929 [1:39:02<00:00, 59.11it/s]Processing patents: 100%|██████████| 344929/344929 [1:39:02<00:00, 58.05it/s]
+
+Processing patents:   0%|          | 0/344929 [00:00<?, ?it/s]
+Processing patents:  29%|██▉       | 100000/344929 [30:10<1:13:53, 55.24it/s]
+Processing patents:  29%|██▉       | 100000/344929 [30:20<1:13:53, 55.24it/s]
+Processing patents:  58%|█████▊    | 200000/344929 [59:53<43:20, 55.72it/s]  
+Processing patents:  58%|█████▊    | 200000/344929 [1:00:10<43:20, 55.72it/s]
+Processing patents:  87%|████████▋ | 300000/344929 [1:27:06<12:52, 58.12it/s]
+Processing patents:  87%|████████▋ | 300000/344929 [1:27:20<12:52, 58.12it/s]
+Processing patents: 100%|██████████| 344929/344929 [1:39:02<00:00, 59.11it/s]
+Processing patents: 100%|██████████| 344929/344929 [1:39:02<00:00, 58.05it/s]
 Iterating through patents of reference year 2013 for evalYear 2015
-Processing patents:   0%|          | 0/364088 [00:00<?, ?it/s]Processing patents:  27%|██▋       | 100000/364088 [26:40<1:10:26, 62.49it/s]Processing patents:  27%|██▋       | 100000/364088 [26:56<1:10:26, 62.49it/s]Processing patents:  55%|█████▍    | 200000/364088 [55:05<45:27, 60.16it/s]  Processing patents:  55%|█████▍    | 200000/364088 [55:16<45:27, 60.16it/s]Processing patents:  82%|████████▏ | 300000/364088 [1:24:26<18:14, 58.57it/s]Processing patents:  82%|████████▏ | 300000/364088 [1:24:46<18:14, 58.57it/s]Processing patents: 100%|██████████| 364088/364088 [1:44:19<00:00, 57.06it/s]Processing patents: 100%|██████████| 364088/364088 [1:44:19<00:00, 58.17it/s]
+
+Processing patents:   0%|          | 0/364088 [00:00<?, ?it/s]
+Processing patents:  27%|██▋       | 100000/364088 [26:40<1:10:26, 62.49it/s]
+Processing patents:  27%|██▋       | 100000/364088 [26:56<1:10:26, 62.49it/s]
+Processing patents:  55%|█████▍    | 200000/364088 [55:05<45:27, 60.16it/s]  
+Processing patents:  55%|█████▍    | 200000/364088 [55:16<45:27, 60.16it/s]
+Processing patents:  82%|████████▏ | 300000/364088 [1:24:26<18:14, 58.57it/s]
+Processing patents:  82%|████████▏ | 300000/364088 [1:24:46<18:14, 58.57it/s]
+Processing patents: 100%|██████████| 364088/364088 [1:44:19<00:00, 57.06it/s]
+Processing patents: 100%|██████████| 364088/364088 [1:44:19<00:00, 58.17it/s]
 Iterating through patents of reference year 2014 for evalYear 2015
-Processing patents:   0%|          | 0/376384 [00:00<?, ?it/s]Processing patents:  27%|██▋       | 100000/376384 [30:46<1:25:03, 54.16it/s]Processing patents:  27%|██▋       | 100000/376384 [31:04<1:25:03, 54.16it/s]Processing patents:  53%|█████▎    | 200000/376384 [1:01:47<54:31, 53.91it/s]Processing patents:  53%|█████▎    | 200000/376384 [1:02:04<54:31, 53.91it/s]Processing patents:  80%|███████▉  | 300000/376384 [1:32:52<23:40, 53.78it/s]Processing patents:  80%|███████▉  | 300000/376384 [1:33:04<23:40, 53.78it/s]Processing patents: 100%|██████████| 376384/376384 [1:57:40<00:00, 52.93it/s]Processing patents: 100%|██████████| 376384/376384 [1:57:40<00:00, 53.31it/s]
+
+Processing patents:   0%|          | 0/376384 [00:00<?, ?it/s]
+Processing patents:  27%|██▋       | 100000/376384 [30:46<1:25:03, 54.16it/s]
+Processing patents:  27%|██▋       | 100000/376384 [31:04<1:25:03, 54.16it/s]
+Processing patents:  53%|█████▎    | 200000/376384 [1:01:47<54:31, 53.91it/s]
+Processing patents:  53%|█████▎    | 200000/376384 [1:02:04<54:31, 53.91it/s]
+Processing patents:  80%|███████▉  | 300000/376384 [1:32:52<23:40, 53.78it/s]
+Processing patents:  80%|███████▉  | 300000/376384 [1:33:04<23:40, 53.78it/s]
+Processing patents: 100%|██████████| 376384/376384 [1:57:40<00:00, 52.93it/s]
+Processing patents: 100%|██████████| 376384/376384 [1:57:40<00:00, 53.31it/s]
 ES and KS done for: 2015_2010_G06F
 ES and KS done for: 2015_2011_G06F
 ES and KS done for: 2015_2012_G06F
@@ -823,3 +1083,97 @@ ES and KS done for: 2015_2013_B32B
 ES and KS done for: 2015_2014_B32B
 df_KS shape:  (14775, 10)
 df_ES shape:  (74696, 10)
+
+Autosaving every 5 seconds
+All 5 reference years for eval year 2011 present
+toEval already done for year 2011
+Iterating through patents of reference year 2006 for evalYear 2011
+Processing patents:   0%|          | 0/309449 [00:00<?, ?it/s]Processing patents:  32%|███▏      | 100000/309449 [27:18<57:10, 61.05it/s]Processing patents:  32%|███▏      | 100000/309449 [27:30<57:10, 61.05it/s]Processing patents:  65%|██████▍   | 200000/309449 [54:36<29:53, 61.03it/s]Processing patents:  65%|██████▍   | 200000/309449 [54:50<29:53, 61.03it/s]File does not exist or is empty: /home/edgarlanoue/data/data/2006/11558335.json
+Processing patents:  97%|█████████▋| 300000/309449 [1:22:10<02:35, 60.78it/s]Processing patents:  97%|█████████▋| 300000/309449 [1:22:30<02:35, 60.78it/s]Processing patents: 100%|██████████| 309449/309449 [1:24:53<00:00, 60.60it/s]Processing patents: 100%|██████████| 309449/309449 [1:24:53<00:00, 60.75it/s]
+Iterating through patents of reference year 2007 for evalYear 2011
+Processing patents:   0%|          | 0/319809 [00:00<?, ?it/s]Processing patents:  31%|███▏      | 100000/319809 [29:09<1:04:05, 57.16it/s]Processing patents:  31%|███▏      | 100000/319809 [29:25<1:04:05, 57.16it/s]Processing patents:  63%|██████▎   | 200000/319809 [59:03<35:27, 56.32it/s]  Processing patents:  63%|██████▎   | 200000/319809 [59:16<35:27, 56.32it/s]Processing patents:  94%|█████████▍| 300000/319809 [1:29:15<05:55, 55.79it/s]Processing patents:  94%|█████████▍| 300000/319809 [1:29:26<05:55, 55.79it/s]Processing patents: 100%|██████████| 319809/319809 [1:35:16<00:00, 55.68it/s]Processing patents: 100%|██████████| 319809/319809 [1:35:16<00:00, 55.94it/s]
+Iterating through patents of reference year 2008 for evalYear 2011
+Processing patents:   0%|          | 0/314526 [00:00<?, ?it/s]Processing patents:  32%|███▏      | 100000/314526 [30:13<1:04:50, 55.15it/s]Processing patents:  32%|███▏      | 100000/314526 [30:26<1:04:50, 55.15it/s]Processing patents:  64%|██████▎   | 200000/314526 [1:00:17<34:30, 55.31it/s]Processing patents:  64%|██████▎   | 200000/314526 [1:00:36<34:30, 55.31it/s]Processing patents:  95%|█████████▌| 300000/314526 [1:30:59<04:24, 54.84it/s]Processing patents:  95%|█████████▌| 300000/314526 [1:31:16<04:24, 54.84it/s]Processing patents: 100%|██████████| 314526/314526 [1:35:20<00:00, 54.91it/s]Processing patents: 100%|██████████| 314526/314526 [1:35:20<00:00, 54.98it/s]
+Iterating through patents of reference year 2009 for evalYear 2011
+Processing patents:   0%|          | 0/290832 [00:00<?, ?it/s]Processing patents:  34%|███▍      | 100000/290832 [28:19<54:02, 58.86it/s]Processing patents:  34%|███▍      | 100000/290832 [28:36<54:02, 58.86it/s]Processing patents:  69%|██████▉   | 200000/290832 [56:30<25:39, 59.01it/s]Processing patents:  69%|██████▉   | 200000/290832 [56:46<25:39, 59.01it/s]Processing patents: 100%|██████████| 290832/290832 [1:21:56<00:00, 59.23it/s]Processing patents: 100%|██████████| 290832/290832 [1:21:56<00:00, 59.15it/s]
+Iterating through patents of reference year 2010 for evalYear 2011
+Processing patents:   0%|          | 0/304660 [00:00<?, ?it/s]Processing patents:  33%|███▎      | 100000/304660 [27:18<55:53, 61.03it/s]Processing patents:  33%|███▎      | 100000/304660 [27:30<55:53, 61.03it/s]Processing patents:  66%|██████▌   | 200000/304660 [54:13<28:20, 61.56it/s]Processing patents:  66%|██████▌   | 200000/304660 [54:30<28:20, 61.56it/s]Processing patents:  98%|█████████▊| 300000/304660 [1:21:06<01:15, 61.76it/s]Processing patents:  98%|█████████▊| 300000/304660 [1:21:20<01:15, 61.76it/s]Processing patents: 100%|██████████| 304660/304660 [1:22:21<00:00, 61.77it/s]Processing patents: 100%|██████████| 304660/304660 [1:22:21<00:00, 61.66it/s]
+ES and KS done for: 2011_2006_G06F
+ES and KS done for: 2011_2007_G06F
+ES and KS done for: 2011_2008_G06F
+ES and KS done for: 2011_2009_G06F
+ES and KS done for: 2011_2010_G06F
+df_KS shape:  (168318, 10)
+df_ES shape:  (429330, 10)
+ES and KS done for: 2011_2006_G01N
+ES and KS done for: 2011_2007_G01N
+ES and KS done for: 2011_2008_G01N
+ES and KS done for: 2011_2009_G01N
+ES and KS done for: 2011_2010_G01N
+df_KS shape:  (22076, 10)
+df_ES shape:  (234207, 10)
+ES and KS done for: 2011_2006_A61B
+ES and KS done for: 2011_2007_A61B
+ES and KS done for: 2011_2008_A61B
+ES and KS done for: 2011_2009_A61B
+ES and KS done for: 2011_2010_A61B
+df_KS shape:  (37821, 10)
+df_ES shape:  (378482, 10)
+ES and KS done for: 2011_2006_B60L
+ES and KS done for: 2011_2007_B60L
+ES and KS done for: 2011_2008_B60L
+ES and KS done for: 2011_2009_B60L
+ES and KS done for: 2011_2010_B60L
+df_KS shape:  (1028, 10)
+df_ES shape:  (55766, 10)
+ES and KS done for: 2011_2006_E21B
+ES and KS done for: 2011_2007_E21B
+ES and KS done for: 2011_2008_E21B
+ES and KS done for: 2011_2009_E21B
+ES and KS done for: 2011_2010_E21B
+df_KS shape:  (9438, 10)
+df_ES shape:  (76057, 10)
+ES and KS done for: 2011_2006_F03D
+ES and KS done for: 2011_2007_F03D
+ES and KS done for: 2011_2008_F03D
+ES and KS done for: 2011_2009_F03D
+ES and KS done for: 2011_2010_F03D
+df_KS shape:  (1794, 10)
+df_ES shape:  (59559, 10)
+ES and KS done for: 2011_2006_H01L
+ES and KS done for: 2011_2007_H01L
+ES and KS done for: 2011_2008_H01L
+ES and KS done for: 2011_2009_H01L
+ES and KS done for: 2011_2010_H01L
+df_KS shape:  (82836, 10)
+df_ES shape:  (260791, 10)
+ES and KS done for: 2011_2006_H04W
+ES and KS done for: 2011_2007_H04W
+ES and KS done for: 2011_2008_H04W
+ES and KS done for: 2011_2009_H04W
+ES and KS done for: 2011_2010_H04W
+df_KS shape:  (13248, 10)
+df_ES shape:  (286466, 10)
+ES and KS done for: 2011_2006_C07D
+ES and KS done for: 2011_2007_C07D
+ES and KS done for: 2011_2008_C07D
+ES and KS done for: 2011_2009_C07D
+ES and KS done for: 2011_2010_C07D
+df_KS shape:  (6469, 10)
+df_ES shape:  (51509, 10)
+ES and KS done for: 2011_2006_D07B
+ES and KS done for: 2011_2007_D07B
+ES and KS done for: 2011_2008_D07B
+ES and KS done for: 2011_2009_D07B
+ES and KS done for: 2011_2010_D07B
+df_KS shape:  (49, 10)
+df_ES shape:  (549, 10)
+ES and KS done for: 2011_2006_B32B
+ES and KS done for: 2011_2007_B32B
+ES and KS done for: 2011_2008_B32B
+ES and KS done for: 2011_2009_B32B
+ES and KS done for: 2011_2010_B32B
+df_KS shape:  (21414, 10)
+df_ES shape:  (204059, 10)
+[IPKernelApp] ERROR | No such comm target registered: jupyter.widget.control
+[IPKernelApp] WARNING | No such comm: 3235ddcd-f510-49e2-8972-38607c4c70c5

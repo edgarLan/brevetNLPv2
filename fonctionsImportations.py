@@ -77,8 +77,14 @@ def json2toEval(year, listIPC, pathData, pathOutput, batch_size=1):
         for i in range(0, total_files, batch_size):
             for j in range(i, min(i + batch_size, total_files)):  # Process in batches
                 patent_path = pathYear + jsonNamesYear[j]
-                with open(patent_path) as f:
-                    d = json.load(f)  # Load JSON in d
+                if os.path.exists(patent_path) and os.path.getsize(patent_path) > 0:
+                    with open(patent_path) as f:
+                        try:
+                            d = json.load(f)  # Load JSON into d
+                        except json.JSONDecodeError:
+                            continue
+                else:
+                    print("File does not exist or is empty:", patent_path)
 
                 class_mainIPC = d['main_ipcr_label']
 
@@ -170,8 +176,14 @@ def json2_KS_ES(year, yearRef, listIPC, pathData, pathOutput, batch_size=1):
         for i in range(0, total_files, batch_size):
             for j in range(i, min(i + batch_size, total_files)):  # Process in batches
                 patent_path = pathYear + jsonNamesYear[j]
-                with open(patent_path) as f:
-                    d = json.load(f)  # Load JSON in d
+                if os.path.exists(patent_path) and os.path.getsize(patent_path) > 0:
+                    with open(patent_path) as f:
+                        try:
+                            d = json.load(f)  # Load JSON into d
+                        except json.JSONDecodeError:
+                            continue
+                else:
+                    print("File does not exist or is empty:", patent_path)
 
                 class_mainIPC = d['main_ipcr_label']
                 class_main = class_mainIPC[0:4]
