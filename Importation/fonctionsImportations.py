@@ -125,7 +125,7 @@ def json2toEval(year, listIPC, pathData, pathOutput, batch_size=1):
         'claims': data_by_ipc[ipc]['claims'],
         'background': data_by_ipc[ipc]['backgrounds'],
         'summary': data_by_ipc[ipc]['summary'],
-        'ipc': ipc,
+        'ipc': data_by_ipc[ipc]['main_ipcr_label'],
         'sec_ipc': data_by_ipc[ipc]['sec_ipc'],
         'label': data_by_ipc[ipc]['labels']
         })
