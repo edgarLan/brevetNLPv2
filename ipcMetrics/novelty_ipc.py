@@ -368,7 +368,7 @@ def compute_scores(list_unique_known, list_known, list_expec, ipc, year, list_ne
     return new_ratio, new_bin, uniq_ratio, uniq_bin, diff_ratio, diff_bin, surpNew_ratio, surpNew_bin, surpDiv_ratio, surpDiv_bin, len1
         
 
-def ipcMetrics(listIPC, listYear, pathData, pathOutput):
+def ipcMetrics(listIPC, listYear, pathData, pathOutput, thr_surp=0, thr_uniq=0, thr_diff=0, thr_surpNew=0, thr_surpDiv=0):
     new_len1=[]
     new_ratio=[]
     new_bin=[]
@@ -386,15 +386,15 @@ def ipcMetrics(listIPC, listYear, pathData, pathOutput):
         for year in listYear:
             print(f"     {year}")
             toEval = pd.read_csv(pathData + f'/toEval/{year}_{ipc}_patents_toEval.csv')
-            KS = pd.read_csv(pathData + f'/KS/{year}_1115_{ipc}_KS_raw.csv')
-            ES = pd.read_csv(pathData + f'/ES/{year}_1115_{ipc}_ES_raw.csv')
+            KS = pd.read_csv(pathData + f'/KS/{year}_{str(year-5)[2:4]}{str(year-1)[2:4]}_{ipc}_KS_raw.csv')
+            ES = pd.read_csv(pathData + f'/ES/{year}_{str(year-5)[2:4]}{str(year-1)[2:4]}_{ipc}_ES_raw.csv')
 
             toEval_ipc = list([ast.literal_eval(i) for i in toEval.sec_ipc])
             KS_ipc = list(set(chain.from_iterable([ast.literal_eval(s) for s in KS.sec_ipc])))
             KS_sec_ipc = list(pd.Series([ast.literal_eval(i) for i in KS.sec_ipc]))
             ES_sec_ipc = list(pd.Series([ast.literal_eval(i) for i in ES.sec_ipc]))
 
-            results = compute_scores(list_unique_known=KS_ipc, list_known=KS_sec_ipc, list_expec=ES_sec_ipc, list_new=toEval_ipc, ipc=ipc, year=year, N=100, nb_K=1000)
+            results = compute_scores(list_unique_known=KS_ipc, list_known=KS_sec_ipc, list_expec=ES_sec_ipc, list_new=toEval_ipc, ipc=ipc, year=year, N=100, nb_K=1000, thr_surp=thr_surp, thr_uniq=thr_uniq, thr_diff=thr_diff, thr_surpNew=thr_surpNew, thr_surpDiv=thr_surpDiv)
             
             new_ratio = results[0]
             new_bin = results[1]
@@ -414,7 +414,8 @@ def ipcMetrics(listIPC, listYear, pathData, pathOutput):
 
             df = pd.DataFrame({
                 "application_number": toEval["application_number"],
-                "application_number": toEval["label"],
+                "label": toEval["label"],
+
                 "new_ratio": new_ratio,
                 "new_bin": new_bin,
                 "new_len1": new_len1,
