@@ -9,6 +9,7 @@ from collections import Counter
 nltk.download('stopwords')
 import glob
 import os
+import random
 
 class Vocab():
     """
@@ -18,16 +19,16 @@ class Vocab():
         stopwords
     """
     
-    def __init__(self, technet, stopwords):
+    def __init__(self, technet, df_lemm):
         self.technet = technet
-        self.stopwords = stopwords
         self.set_vocab = self.setVocab()
+        self.dictionary = pd.Series(df_lemm['lemmatized'].values, index=df_lemm['technet_vocab']).to_dict()
         
 
     def setVocab(self):
         keep_vocab = list(self.technet['technet_vocab'])
-        keep_vocab = list(filter(lambda a: a != '-', keep_vocab))  # retirer  -
-        keep_vocab = list(filter(lambda a: a not in self.stopwords, keep_vocab)) # retirer mot dans nltk stopEN
+        # keep_vocab = list(filter(lambda a: a != '-', keep_vocab))  # retirer  -
+        # keep_vocab = list(filter(lambda a: a not in self.stopwords, keep_vocab)) # retirer mot dans nltk stopEN
         set_keep = set(keep_vocab)
         return set_keep
     
@@ -40,37 +41,82 @@ class Vocab():
         filtered_text = ' '.join(doc_token)
         return filtered_text
     
-    def cleanDF(self, df_full):
+    def cleanDF(self, df_text, type="all"):
         df_clean = pd.DataFrame()
-        df_clean['background'] = df_full['background'].apply(self.clean_tokens)
-        df_clean['claims'] = df_full['claims'].apply(self.clean_tokens)
-        df_clean['abstract'] = df_full['abstract'].apply(self.clean_tokens)
-        df_clean['summary'] = df_full['summary'].apply(self.clean_tokens)
+        if type=="all":
+            df_clean['background'] = df_text['background'].apply(self.clean_tokens)
+            df_clean['claims'] = df_text['claims'].apply(self.clean_tokens)
+            df_clean['abstract'] = df_text['abstract'].apply(self.clean_tokens)
+            df_clean['summary'] = df_text['summary'].apply(self.clean_tokens)
+        elif type=="claims":
+            df_clean['claims'] = df_text['claims'].apply(self.clean_tokens)
+        elif type=="others":
+            df_clean['background'] = df_text['background'].apply(self.clean_tokens)
+            df_clean['abstract'] = df_text['abstract'].apply(self.clean_tokens)
+            df_clean['summary'] = df_text['summary'].apply(self.clean_tokens)
+
+
         return df_clean
     
-    def count_word_frequency_patent(self, text):
+    def lemmatize_with_dict(self, text):
         words = text.split()
-        word_count = Counter(words)
-        return word_count
+        lemmatized_text = []
 
-    def count_word_frequency_total(self, df_clean):
-        # Initialize a Counter to hold the total word frequency across the entire column
-        total_word_count = Counter()
+        for word in words:
+            # Check if the word is in the dictionary and add it only if found
+            lemmatized_word = self.dictionary.get(word)
 
-        # Iterate through the rows of the selected columns and update the total word count
-        for column in list(df_clean.columns):
-            for text in df_clean[column]:
-                total_word_count += self.count_word_frequency_patent(text)
-        return total_word_count
+            if isinstance(lemmatized_word, str):
+                lemmatized_text.append(lemmatized_word)
+
+        return ' '.join(lemmatized_text)
+    
+    def lemmDF(self, df_clean):
+        lemm_df = pd.DataFrame()
+        for column in df_clean.columns:
+            lemm_df[column] = df_clean[column].apply(lambda x: self.lemmatize_with_dict(str(x)))
+        return lemm_df
 
     
-def df2dict(pathCSV):
-    # Directory containing the CSV files
-    directory = pathCSV
-    data_by_year_ipc = {}
-    # Get all CSV file paths
+def count_word_frequency_patent(text):
+    words = text.split()
+    word_count = Counter(words)
+    return word_count
 
-    csv_files = glob.glob(os.path.join(directory, "*.csv"))
+def count_word_frequency_total(df_clean):
+    # Initialize a Counter to hold the total word frequency across the entire column
+    total_word_count = Counter()
+
+    # Iterate through the rows of the selected columns and update the total word count
+    for column in list(df_clean.columns):
+        for text in df_clean[column]:
+            total_word_count += count_word_frequency_patent(text)
+    return total_word_count
+
+    
+def df2dict(pathCSV, n=50):
+
+    data_by_year_ipc = {}
+
+    num_files = len([f for f in os.listdir(pathCSV) if os.path.isfile(os.path.join(pathCSV, f))])
+    if n > num_files:
+        n=num_files
+
+    # Filter for files that contain "KS" in the filename
+    ks_files = [f for f in os.listdir(pathCSV) if os.path.isfile(os.path.join(pathCSV, f)) and f.endswith('.csv')]
+
+    # Get the count of available KS files
+    num_files = len(ks_files)
+
+    # Adjust n if it exceeds the number of available KS files
+    if n > num_files:
+        n = num_files
+
+    # Randomly sample n files from the KS files
+    sampled_files = random.sample(ks_files, n)
+
+    # Get the full paths of the sampled files
+    csv_files = [os.path.join(pathCSV, f) for f in sampled_files]
 
     # Loop through each file, extract year and IPC, and store DataFrame in the dictionary
     for file in csv_files:
@@ -79,7 +125,7 @@ def df2dict(pathCSV):
         
         # Extract year and IPC code from the filename
         try:
-            year, ipc, _ = filename.split("_")[:3]
+            year, _, ipc = filename.split("_")[:3]
             
             # Load the CSV file as a DataFrame
             df = pd.read_csv(file)
@@ -94,3 +140,4 @@ def df2dict(pathCSV):
         except ValueError:
             print(f"Filename format unexpected: {filename}")
     return(data_by_year_ipc)
+
