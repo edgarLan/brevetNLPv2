@@ -1,0 +1,82 @@
+Autosaving every 5 seconds
+[nltk_data] Downloading package stopwords to
+[nltk_data]     /home/edgarlanoue/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+Stopwords NLTK:  ['i', 'me', 'my', 'myself', 'we', 'our', 'ours', 'ourselves', 'you', "you're", "you've", "you'll", "you'd", 'your', 'yours', 'yourself', 'yourselves', 'he', 'him', 'his', 'himself', 'she', "she's", 'her', 'hers', 'herself', 'it', "it's", 'its', 'itself', 'they', 'them', 'their', 'theirs', 'themselves', 'what', 'which', 'who', 'whom', 'this', 'that', "that'll", 'these', 'those', 'am', 'is', 'are', 'was', 'were', 'be', 'been', 'being', 'have', 'has', 'had', 'having', 'do', 'does', 'did', 'doing', 'a', 'an', 'the', 'and', 'but', 'if', 'or', 'because', 'as', 'until', 'while', 'of', 'at', 'by', 'for', 'with', 'about', 'against', 'between', 'into', 'through', 'during', 'before', 'after', 'above', 'below', 'to', 'from', 'up', 'down', 'in', 'out', 'on', 'off', 'over', 'under', 'again', 'further', 'then', 'once', 'here', 'there', 'when', 'where', 'why', 'how', 'all', 'any', 'both', 'each', 'few', 'more', 'most', 'other', 'some', 'such', 'no', 'nor', 'not', 'only', 'own', 'same', 'so', 'than', 'too', 'very', 's', 't', 'can', 'will', 'just', 'don', "don't", 'should', "should've", 'now', 'd', 'll', 'm', 'o', 're', 've', 'y', 'ain', 'aren', "aren't", 'couldn', "couldn't", 'didn', "didn't", 'doesn', "doesn't", 'hadn', "hadn't", 'hasn', "hasn't", 'haven', "haven't", 'isn', "isn't", 'ma', 'mightn', "mightn't", 'mustn', "mustn't", 'needn', "needn't", 'shan', "shan't", 'shouldn', "shouldn't", 'wasn', "wasn't", 'weren', "weren't", 'won', "won't", 'wouldn', "wouldn't"]
+
+Stopwords USTPO:  ['a', 'accordance', 'according', 'all', 'also', 'an', 'and', 'another', 'are', 'as', 'at', 'be', 'because', 'been', 'being', 'by', 'claim', 'comprises', 'corresponding', 'could', 'described', 'desired', 'do', 'does', 'each', 'embodiment', 'fig', 'figs', 'for', 'from', 'further', 'generally', 'had', 'has', 'have', 'having', 'herein', 'however', 'if', 'in', 'into', 'invention', 'is', 'it', 'its', 'means', 'not', 'now', 'of', 'on', 'onto', 'or', 'other', 'particularly', 'preferably', 'preferred', 'present', 'provide', 'provided', 'provides', 'relatively', 'respectively', 'said', 'should', 'since', 'some', 'such', 'suitable', 'than', 'that', 'the', 'their', 'then', 'there', 'thereby', 'therefore', 'thereof', 'thereto', 'these', 'they', 'this', 'those', 'thus', 'to', 'use', 'various', 'was', 'were', 'what', 'when', 'where', 'whereby', 'wherein', 'which', 'while', 'who', 'will', 'with', 'would']
+
+Stopwords TN_technical:  ['able', 'above-mentioned', 'accordingly', 'across', 'along', 'already', 'alternatively', 'always', 'among', 'and/or', 'anything', 'anywhere', 'better', 'disclosure', 'due', 'easily', 'easy', 'eg', 'either', 'elsewhere', 'enough', 'especially', 'essentially', 'et al', 'etc', 'eventually', 'excellent', 'finally', 'furthermore', 'good', 'hence', 'he/she', 'him/her', 'his/her', 'ie', 'ii', 'iii', 'instead', 'later', 'like', 'little', 'many', 'may', 'meanwhile', 'might', 'moreover', 'much', 'must', 'never', 'often', 'others', 'otherwise', 'overall', 'rather', 'remarkably', 'significantly', 'simply', 'sometimes', 'specifically', 'straight forward', 'substantially', 'thereafter', 'therebetween', 'therefor', 'therefrom', 'therein', 'thereinto', 'thereon', 'therethrough', 'therewith', 'together', 'toward', 'towards', 'typical', 'typically', 'upon', 'via', 'vice versa', 'whatever', 'whereas', 'whereat', 'wherever', 'whether', 'whose', 'within', 'without', 'yet']
+
+toAdd:  ['or', 'in', 'be', 'but ', 'an', 'of', 'may', 'as', 'soh', 'eoh', 'a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z', '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-']
+846003
+846001
+[nltk_data] Downloading package stopwords to
+[nltk_data]     /home/edgarlanoue/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+[nltk_data] Downloading package stopwords to
+[nltk_data]     /home/edgarlanoue/nltk_data...
+[nltk_data]   Package stopwords is already up-to-date!
+{'2011': {'E21B': 9438, 'D07B': 49, 'H01L': 82836, 'G01N': 22076, 'C07D': 6469, 'F03D': 1794}, '2012': {'C07D': 6461, 'E21B': 10351, 'H04W': 22511}, '2013': {'B32B': 21465, 'F03D': 2478, 'H04W': 34812}, '2014': {'E21B': 11806, 'D07B': 73, 'H04W': 44737}, '2016': {'B32B': 11758, 'E21B': 12903, 'F03D': 2610, 'C07D': 15519}, '2015': {'A61B': 45634, 'H01L': 96894, 'F03D': 2682}}
+2011
+    E21B - others: [('drill', 112644), ('well', 86959), ('fluid', 80812)]
+    E21B - claims: [('method', 91430), ('comprise', 83677), ('first', 75974)]
+    D07B - others: [('rope', 715), ('wire', 546), ('strand', 534)]
+    D07B - claims: [('rope', 425), ('strand', 366), ('wire', 307)]
+    H01L - others: [('layer', 1695194), ('form', 1103593), ('semiconductor', 1072607)]
+    H01L - claims: [('layer', 1575804), ('first', 1204958), ('second', 1013298)]
+    G01N - others: [('sample', 195230), ('method', 170152), ('one', 157140)]
+    G01N - claims: [('method', 229279), ('comprise', 156830), ('one', 147011)]
+    C07D - others: [('group', 63194), ('compound', 43768), ('formula', 42590)]
+    C07D - claims: [('group', 148269), ('c1', 94504), ('substitute', 84656)]
+    F03D - others: [('wind', 44882), ('turbine', 27931), ('blade', 24107)]
+    F03D - claims: [('wind', 29308), ('turbine', 20993), ('blade', 18680)]
+Counter of 2011:  [('layer', 3359372), ('first', 2489554), ('form', 2214371)]
+2012
+    C07D - others: [('group', 60813), ('compound', 44131), ('formula', 42952)]
+    C07D - claims: [('group', 139680), ('c1', 85891), ('compound', 78113)]
+    E21B - others: [('drill', 117027), ('well', 93199), ('fluid', 88228)]
+    E21B - claims: [('method', 100738), ('comprise', 91794), ('first', 85118)]
+    H04W - others: [('network', 277784), ('communication', 256942), ('mobile', 235983)]
+    H04W - claims: [('method', 262561), ('first', 251814), ('communication', 249663)]
+Counter of 2012:  [('one', 620813), ('method', 599815), ('communication', 528035)]
+2013
+    B32B - others: [('layer', 227792), ('material', 163407), ('surface', 140178)]
+    B32B - claims: [('layer', 215058), ('method', 133801), ('comprise', 126629)]
+    F03D - others: [('wind', 62329), ('turbine', 41504), ('blade', 39969)]
+    F03D - claims: [('wind', 38880), ('turbine', 29451), ('blade', 27935)]
+    H04W - others: [('network', 415781), ('communication', 389076), ('device', 345399)]
+    H04W - claims: [('first', 403805), ('device', 402266), ('method', 397384)]
+Counter of 2013:  [('one', 886684), ('first', 844890), ('method', 843207)]
+2014
+    E21B - others: [('drill', 122545), ('well', 103003), ('fluid', 100484)]
+    E21B - claims: [('method', 110046), ('first', 104479), ('comprise', 102049)]
+    D07B - others: [('rope', 1082), ('strand', 577), ('form', 500)]
+    D07B - claims: [('rope', 847), ('strand', 581), ('form', 490)]
+    H04W - others: [('network', 525032), ('communication', 492704), ('device', 472441)]
+    H04W - claims: [('device', 574760), ('first', 541129), ('method', 502061)]
+Counter of 2014:  [('device', 1111123), ('communication', 1005284), ('one', 1004391)]
+2016
+    B32B - others: [('layer', 142827), ('material', 93032), ('surface', 79078)]
+    B32B - claims: [('layer', 133655), ('first', 81753), ('method', 72050)]
+    E21B - others: [('drill', 134734), ('fluid', 111179), ('well', 110873)]
+    E21B - claims: [('first', 125236), ('method', 116884), ('comprise', 112471)]
+    F03D - others: [('wind', 75383), ('turbine', 50080), ('blade', 49476)]
+    F03D - claims: [('wind', 43784), ('turbine', 33023), ('blade', 29967)]
+    C07D - others: [('alkyl', 164311), ('substitute', 156660), ('compound', 136852)]
+    C07D - claims: [('c1', 378913), ('group', 299394), ('substitute', 287069)]
+Counter of 2016:  [('one', 635991), ('method', 493548), ('group', 485304)]
+2015
+    A61B - others: [('one', 444410), ('device', 430549), ('first', 388083)]
+    A61B - claims: [('first', 465533), ('second', 414083), ('one', 334578)]
+    H01L - others: [('layer', 1877035), ('first', 1090709), ('semiconductor', 1088282)]
+    H01L - claims: [('layer', 1930428), ('first', 1576404), ('second', 1313285)]
+    F03D - others: [('wind', 74039), ('turbine', 49203), ('blade', 47133)]
+    F03D - claims: [('wind', 43182), ('turbine', 32607), ('blade', 29909)]
+Counter of 2015:  [('layer', 3881699), ('first', 3554857), ('second', 2933657)]
+No such comm target registered: jupyter.widget.control
+No such comm target registered: jupyter.widget.control
+No such comm target registered: jupyter.widget.control
+No such comm: 255d2be3-3378-4471-bba5-344871b7e407
+No such comm: b267d0e4-a345-45db-a0fb-77c4f7b752b0
+No such comm: 5522c1f7-7875-4481-a247-75dcd292013b
