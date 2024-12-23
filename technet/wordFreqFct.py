@@ -17,6 +17,7 @@ class Vocab():
     Inputs:
         technet
         stopwords
+        df_lemm : lemmatized technet
     """
     
     def __init__(self, technet, df_lemm):
