@@ -55,9 +55,9 @@ class Newness():
         JSD == 0 if and only if pi = qi, but we want to make sure the distribution gap between this two are large enough
         To interpret as if the new term make the divergence greater than threshold, then it is a significant cointributing, we just need to know in appearing or disappearing
         """
+        count_appear = 0
+        count_disappear = 0
         for i in range(self.nb_elements):
-            count_appear = 0
-            count_disappear = 0
             if self.JSD_vector[i] > thr_div:
                 if self.new_Q[i] > self.known_P[i]:
                     count_appear += 1
@@ -77,9 +77,9 @@ class Newness():
         """
         To interpret as if the new term has a probability of appearing thr_new times greater than old doc, it is a new significant term. Reverse is true for disappearing
         """
+        count_appear = 0
+        count_disappear = 0
         for i in range(self.nb_elements):
-            count_appear = 0
-            count_disappear = 0
             if self.JSD_vector[i] != 0:
                 # To interpret as if the new term has a probability of appearing thr_new times greater than old doc, it is a new significant term. Reverse is true for disappearing
                 if self.new_Q[i] / (self.known_P[i]+cte) > thr_prob:  
@@ -327,7 +327,7 @@ class ClusterKS(Difference):
         return clusters, kmeans
     
 
-    def ratio_to_neighbors_kmeans(self, variation_dist, neighbor_dist=0, thr_diff=0.85, nb_clusters=3):
+    def ratio_to_neighbors_kmeans(self, variation_dist, neighbor_dist=0, thr_diff=0.85, nb_clusters=4):
         """
         Compute the ratio of neighbors' distributions within the closest k-means clusters 
         based on Jensen-Shannon divergence.
@@ -369,13 +369,14 @@ class ClusterKS(Difference):
         
         # Find the smallest N Jensen-Shannon divergences
         kmean_closest = heapq.nsmallest(self.N, js_divergences)
+        print(kmean_closest)
         count_diff = sum(1 for dist in kmean_closest if dist > neighbor_dist)
 
-        difference = count_diff / len(kmean_closest)
-        novel_diff = int(difference > thr_diff)
+        dif_score = count_diff / len(kmean_closest)
+        dif_bin = int(dif_score > thr_diff)
         mean100 = np.mean(kmean_closest)
 
-        return kmean_closest, mean100
+        return dif_score, dif_bin, mean100 #, kmean_closest, mean100
     
 
 

@@ -135,7 +135,7 @@ class Surprise():
         surprise_dists = []
         # print(key_list)
         print("JSDiv")
-        i=0
+        #i=0
         for entry in tqdm(key_list):
             tuple_known, tuple_new = vecotr_tuples[entry]
             

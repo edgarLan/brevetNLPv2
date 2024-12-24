@@ -15,7 +15,7 @@ def pmi(input_, w_size=3):
     """ Input : list of ORDERED feature variables (words for example) -- if feature order does not matter set window_size to inf. """
     bigram_measures = BigramAssocMeasures()
     finder = BigramCollocationFinder.from_words(input_, window_size= w_size)
-    return finder.score_ngrams(bigram_measures.pmi)
+    return finder.score_ngrams(bigram_measures.pmi) #, finder.word_fd, finder.ngram_fd, total_words_temp
 
 
 
@@ -91,11 +91,6 @@ class OptimizedIncrementalPMI:
         pmi_scores = {}
 
         for (word1, word2), count in tqdm(self.bigram_counts.items()):
-            # if count >= min_count:
-            # p_word1 = self.word_counts[word1] / (self.total_words*1/(self.window_size - 1))
-            # p_word2 = self.word_counts[word2] / (self.total_words*1/(self.window_size - 1))
-            # p_bigram = count / (self.total_words*1/(self.window_size - 1))
-            # pmi = math.log2(p_bigram / (p_word1 * p_word2))
             pmi = math.log2(count/(self.word_counts[word1]*self.word_counts[word2])) + math.log2(self.total_words*1/(self.window_size - 1))
             pmi_scores[(word1, word2)] = [pmi, self.word_counts[word1], self.word_counts[word2], count]
     
