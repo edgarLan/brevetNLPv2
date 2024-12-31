@@ -369,7 +369,7 @@ class ClusterKS(Difference):
         
         # Find the smallest N Jensen-Shannon divergences
         kmean_closest = heapq.nsmallest(self.N, js_divergences)
-        print(kmean_closest)
+        # print(kmean_closest)
         count_diff = sum(1 for dist in kmean_closest if dist > neighbor_dist)
 
         dif_score = count_diff / len(kmean_closest)

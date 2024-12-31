@@ -40,9 +40,24 @@ class Jensen_Shannon():
         Input: P and Q are probability distribution vectors
             P is the known distribution and Q is the novel distribution.
         """
-        # Normalize P and Q to ensure they sum to 1
-        _P = np.asarray(P) / np.sum(P)
-        _Q = np.asarray(Q) / np.sum(Q)
+        # Convert P and Q to numpy arrays
+        _P = np.asarray(P)
+        _Q = np.asarray(Q)
+
+        # Ensure that the sum of P and Q are not zero
+        sum_P = np.sum(_P)
+        sum_Q = np.sum(_Q)
+
+        # Replace zeros with a small number to avoid division by zero
+        if sum_P == 0:
+            _P = np.ones_like(_P) * np.finfo(float).eps  # Assign small values if sum is zero
+        else:
+            _P /= sum_P  # Normalize P
+
+        if sum_Q == 0:
+            _Q = np.ones_like(_Q) * np.finfo(float).eps  # Assign small values if sum is zero
+        else:
+            _Q /= sum_Q  # Normalize Q
 
         # Compute the mixture distribution
         _M = self.Pi1 * _P + self.Pi2 * _Q

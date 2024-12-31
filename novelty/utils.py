@@ -234,7 +234,6 @@ def docs_distribution(baseSpace, tE):
     - Corpus_dist: Overall term probability distribution in the Knowledge Base.
     - Count_matrix: Term count matrix for all documents (Knowledge Base + Text Examples).
     """
-
     # Combine baseSpace text with tE claims and handle NaN values
     KS_corpus = pd.concat([baseSpace, tE], axis=0).fillna("")
 
@@ -246,14 +245,18 @@ def docs_distribution(baseSpace, tE):
     Old_matrix = Count_matrix[:len(baseSpace), :]  # Sparse matrix slicing
 
     # Compute term probability distributions for Knowledge Base documents
-    row_sums = Old_matrix.sum(axis=1)  # Sum of terms per document
-    Prob_KB_matrix = Old_matrix.multiply(1 / row_sums)  # Element-wise division for sparsity
+    row_sums = np.array(Old_matrix.sum(axis=1)).flatten()  # Ensure 1D array
+    row_sums[row_sums == 0] = np.finfo(float).eps         # Replace zeros
 
-    # Ensure that Prob_KB_matrix is CSR format
-    Prob_KB_matrix = Prob_KB_matrix.tocsr()
+    # Reshape row_sums to align with the sparse matrix's row structure
+    row_sums_reshaped = row_sums[:, np.newaxis]  # Convert to column vector
+
+    # Perform element-wise division safely
+    Prob_KB_matrix = Old_matrix.multiply(1 / row_sums_reshaped)
+    Prob_KB_matrix = Prob_KB_matrix.tocsr()  # Ensure CSR format
 
     # Compute overall term distribution in the Knowledge Base
-    Count_overall = Old_matrix.sum(axis=0).A1  # Sum over all documents, convert to array
+    Count_overall = Old_matrix.sum(axis=0).A1  # Sum over all documents, convert to 1D array
     Corpus_dist = Count_overall / Count_overall.sum()
 
     return Prob_KB_matrix, Corpus_dist, Count_matrix

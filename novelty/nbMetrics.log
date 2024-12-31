@@ -1,0 +1,202 @@
+Autosaving every 5 seconds
+['2012', '2013', '2014', '2015', '2016']
+['G06F']
+2012
+    G06F
+/home/edgarlanoue/brevetNLP/novelty/utils.py:255: RuntimeWarning: divide by zero encountered in divide
+  Prob_KB_matrix = Old_matrix.multiply(1 / row_sums_reshaped)
+/home/edgarlanoue/brevetNLP/novelty/utils.py:282: RuntimeWarning: divide by zero encountered in divide
+  Variation_matrix = New_Count_matrix.multiply(1 / row_sums[:, None])
+0 on 40960, time since last print: 966.74 seconds
+1000 on 40960, time since last print: 4103.34 seconds
+2000 on 40960, time since last print: 4183.57 seconds
+3000 on 40960, time since last print: 4160.77 seconds
+4000 on 40960, time since last print: 4160.77 seconds
+5000 on 40960, time since last print: 4183.51 seconds
+6000 on 40960, time since last print: 4095.65 seconds
+7000 on 40960, time since last print: 4146.31 seconds
+8000 on 40960, time since last print: 4152.26 seconds
+Autosaving every 5 seconds
+['2012', '2013', '2014', '2015', '2016']
+['G06F']
+2012
+    G06F
+/home/edgarlanoue/brevetNLP/novelty/utils.py:255: RuntimeWarning: divide by zero encountered in divide
+  Prob_KB_matrix = Old_matrix.multiply(1 / row_sums_reshaped)
+/home/edgarlanoue/brevetNLP/novelty/utils.py:282: RuntimeWarning: divide by zero encountered in divide
+  Variation_matrix = New_Count_matrix.multiply(1 / row_sums[:, None])
+0 on 40960, time since last print: 1005.71 seconds
+1000 on 40960, time since last print: 4122.92 seconds
+2000 on 40960, time since last print: 4256.98 seconds
+3000 on 40960, time since last print: 4194.65 seconds
+4000 on 40960, time since last print: 4251.71 seconds
+5000 on 40960, time since last print: 4246.23 seconds
+6000 on 40960, time since last print: 4176.03 seconds
+7000 on 40960, time since last print: 4223.51 seconds
+8000 on 40960, time since last print: 4193.42 seconds
+9000 on 40960, time since last print: 4260.92 seconds
+10000 on 40960, time since last print: 4189.45 seconds
+11000 on 40960, time since last print: 4153.47 seconds
+12000 on 40960, time since last print: 4198.64 seconds
+13000 on 40960, time since last print: 4209.11 seconds
+14000 on 40960, time since last print: 4124.26 seconds
+15000 on 40960, time since last print: 4202.07 seconds
+16000 on 40960, time since last print: 4182.20 seconds
+17000 on 40960, time since last print: 4198.15 seconds
+18000 on 40960, time since last print: 4164.85 seconds
+19000 on 40960, time since last print: 4267.99 seconds
+20000 on 40960, time since last print: 4141.11 seconds
+21000 on 40960, time since last print: 4222.48 seconds
+22000 on 40960, time since last print: 4142.31 seconds
+23000 on 40960, time since last print: 4170.21 seconds
+24000 on 40960, time since last print: 4111.08 seconds
+25000 on 40960, time since last print: 4191.22 seconds
+26000 on 40960, time since last print: 4184.57 seconds
+27000 on 40960, time since last print: 4160.71 seconds
+28000 on 40960, time since last print: 4151.34 seconds
+29000 on 40960, time since last print: 4131.64 seconds
+30000 on 40960, time since last print: 4222.46 seconds
+31000 on 40960, time since last print: 4189.27 seconds
+32000 on 40960, time since last print: 4129.65 seconds
+33000 on 40960, time since last print: 4204.98 seconds
+34000 on 40960, time since last print: 4182.50 seconds
+35000 on 40960, time since last print: 4186.96 seconds
+36000 on 40960, time since last print: 4180.51 seconds
+37000 on 40960, time since last print: 4116.12 seconds
+38000 on 40960, time since last print: 4153.83 seconds
+39000 on 40960, time since last print: 4241.97 seconds
+40000 on 40960, time since last print: 4169.92 seconds
+2013
+    G06F
+/home/edgarlanoue/brevetNLP/novelty/utils.py:255: RuntimeWarning: divide by zero encountered in divide
+  Prob_KB_matrix = Old_matrix.multiply(1 / row_sums_reshaped)
+/home/edgarlanoue/brevetNLP/novelty/utils.py:282: RuntimeWarning: divide by zero encountered in divide
+  Variation_matrix = New_Count_matrix.multiply(1 / row_sums[:, None])
+0 on 33095, time since last print: 5119.33 seconds
+1000 on 33095, time since last print: 3961.67 seconds
+2000 on 33095, time since last print: 3943.55 seconds
+3000 on 33095, time since last print: 3919.22 seconds
+4000 on 33095, time since last print: 3958.72 seconds
+5000 on 33095, time since last print: 3966.59 seconds
+6000 on 33095, time since last print: 3930.36 seconds
+7000 on 33095, time since last print: 3913.43 seconds
+8000 on 33095, time since last print: 3905.59 seconds
+9000 on 33095, time since last print: 3887.30 seconds
+10000 on 33095, time since last print: 3929.45 seconds
+11000 on 33095, time since last print: 3935.90 seconds
+12000 on 33095, time since last print: 3969.78 seconds
+13000 on 33095, time since last print: 3904.16 seconds
+14000 on 33095, time since last print: 3896.10 seconds
+15000 on 33095, time since last print: 3842.48 seconds
+16000 on 33095, time since last print: 3904.15 seconds
+17000 on 33095, time since last print: 3902.96 seconds
+18000 on 33095, time since last print: 3876.96 seconds
+19000 on 33095, time since last print: 3894.20 seconds
+20000 on 33095, time since last print: 3910.81 seconds
+21000 on 33095, time since last print: 3937.12 seconds
+22000 on 33095, time since last print: 3951.30 seconds
+23000 on 33095, time since last print: 3930.41 seconds
+24000 on 33095, time since last print: 3963.66 seconds
+25000 on 33095, time since last print: 4008.45 seconds
+26000 on 33095, time since last print: 4006.23 seconds
+27000 on 33095, time since last print: 3966.79 seconds
+28000 on 33095, time since last print: 3971.33 seconds
+29000 on 33095, time since last print: 3900.24 seconds
+30000 on 33095, time since last print: 3933.31 seconds
+31000 on 33095, time since last print: 3906.14 seconds
+32000 on 33095, time since last print: 3996.16 seconds
+33000 on 33095, time since last print: 3938.46 seconds
+2014
+    G06F
+/home/edgarlanoue/brevetNLP/novelty/utils.py:255: RuntimeWarning: divide by zero encountered in divide
+  Prob_KB_matrix = Old_matrix.multiply(1 / row_sums_reshaped)
+/home/edgarlanoue/brevetNLP/novelty/utils.py:282: RuntimeWarning: divide by zero encountered in divide
+  Variation_matrix = New_Count_matrix.multiply(1 / row_sums[:, None])
+0 on 28378, time since last print: 1547.23 seconds
+1000 on 28378, time since last print: 3895.44 seconds
+2000 on 28378, time since last print: 3852.18 seconds
+3000 on 28378, time since last print: 3863.01 seconds
+4000 on 28378, time since last print: 3777.94 seconds
+5000 on 28378, time since last print: 3819.48 seconds
+6000 on 28378, time since last print: 3829.74 seconds
+7000 on 28378, time since last print: 3875.73 seconds
+8000 on 28378, time since last print: 3849.32 seconds
+9000 on 28378, time since last print: 3947.15 seconds
+10000 on 28378, time since last print: 3902.60 seconds
+11000 on 28378, time since last print: 3934.17 seconds
+12000 on 28378, time since last print: 3853.50 seconds
+13000 on 28378, time since last print: 4006.15 seconds
+14000 on 28378, time since last print: 3920.67 seconds
+15000 on 28378, time since last print: 3941.62 seconds
+16000 on 28378, time since last print: 3961.60 seconds
+17000 on 28378, time since last print: 3874.76 seconds
+18000 on 28378, time since last print: 3848.05 seconds
+19000 on 28378, time since last print: 3872.62 seconds
+20000 on 28378, time since last print: 3875.91 seconds
+21000 on 28378, time since last print: 3880.13 seconds
+22000 on 28378, time since last print: 3803.31 seconds
+23000 on 28378, time since last print: 3842.09 seconds
+24000 on 28378, time since last print: 3949.76 seconds
+25000 on 28378, time since last print: 3961.53 seconds
+26000 on 28378, time since last print: 3920.72 seconds
+27000 on 28378, time since last print: 3945.26 seconds
+28000 on 28378, time since last print: 3871.08 seconds
+2015
+    G06F
+/home/edgarlanoue/brevetNLP/novelty/utils.py:255: RuntimeWarning: divide by zero encountered in divide
+  Prob_KB_matrix = Old_matrix.multiply(1 / row_sums_reshaped)
+/home/edgarlanoue/brevetNLP/novelty/utils.py:282: RuntimeWarning: divide by zero encountered in divide
+  Variation_matrix = New_Count_matrix.multiply(1 / row_sums[:, None])
+0 on 21100, time since last print: 2286.58 seconds
+1000 on 21100, time since last print: 4060.42 seconds
+2000 on 21100, time since last print: 3969.88 seconds
+3000 on 21100, time since last print: 4056.37 seconds
+4000 on 21100, time since last print: 3990.37 seconds
+5000 on 21100, time since last print: 3901.29 seconds
+6000 on 21100, time since last print: 4104.86 seconds
+7000 on 21100, time since last print: 4159.16 seconds
+8000 on 21100, time since last print: 4027.72 seconds
+9000 on 21100, time since last print: 4051.15 seconds
+10000 on 21100, time since last print: 4046.39 seconds
+11000 on 21100, time since last print: 3987.94 seconds
+12000 on 21100, time since last print: 4063.72 seconds
+13000 on 21100, time since last print: 4063.28 seconds
+14000 on 21100, time since last print: 3973.64 seconds
+15000 on 21100, time since last print: 4026.69 seconds
+16000 on 21100, time since last print: 4052.65 seconds
+17000 on 21100, time since last print: 4055.17 seconds
+18000 on 21100, time since last print: 4059.47 seconds
+19000 on 21100, time since last print: 4124.52 seconds
+20000 on 21100, time since last print: 4091.62 seconds
+21000 on 21100, time since last print: 4027.25 seconds
+2016
+    G06F
+/home/edgarlanoue/brevetNLP/novelty/utils.py:255: RuntimeWarning: divide by zero encountered in divide
+  Prob_KB_matrix = Old_matrix.multiply(1 / row_sums_reshaped)
+/home/edgarlanoue/brevetNLP/novelty/utils.py:282: RuntimeWarning: divide by zero encountered in divide
+  Variation_matrix = New_Count_matrix.multiply(1 / row_sums[:, None])
+0 on 9234, time since last print: 1327.04 seconds
+1000 on 9234, time since last print: 3764.00 seconds
+2000 on 9234, time since last print: 3797.59 seconds
+3000 on 9234, time since last print: 3781.13 seconds
+4000 on 9234, time since last print: 3882.45 seconds
+5000 on 9234, time since last print: 3771.63 seconds
+6000 on 9234, time since last print: 3836.57 seconds
+7000 on 9234, time since last print: 3928.85 seconds
+8000 on 9234, time since last print: 3835.09 seconds
+9000 on 9234, time since last print: 3877.38 seconds
+
+
+
+
+
+
+Autosaving every 5 seconds
+['2012', '2013', '2014', '2015', '2016']
+['G06F']
+2012
+    G06F
+0 on 40960, time since last print: 2150.67 seconds
+1000 on 40960, time since last print:7127 .06 seconds
+2000 on 40960, time since last print: 7205.70 seconds
+3000 on 40960, time since last print: 7086.09 seconds
