@@ -11,7 +11,7 @@ import glob
 import os
 import random
 import ast
-tqdm.pandas()
+tqdm.pandas(miniters=100000)
 
 class Vocab():
     """

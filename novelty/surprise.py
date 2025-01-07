@@ -56,8 +56,8 @@ class Surprise():
         # interList_w1 = [word for word in interList_w1 if word not in ['w1', 'w2']]
         # interList_w2 = [word for word in interList_w2 if word not in ['w1', 'w2']]
 
-        interList_w1 = list(set(w1_old + w1_new) - {'w1', 'w2'})
-        interList_w2 = list(set(w2_old + w2_new) - {'w1', 'w2'})
+        interList_w1 = list(set(w1_old) & set(w1_new) - {'w1', 'w2'})
+        interList_w2 = list(set(w2_old) & set(w2_new) - {'w1', 'w2'})
 
         vectors = {}
         # for entry in tqdm(interList_w1):
