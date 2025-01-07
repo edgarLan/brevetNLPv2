@@ -200,3 +200,93 @@ Autosaving every 5 seconds
 1000 on 40960, time since last print:7127 .06 seconds
 2000 on 40960, time since last print: 7205.70 seconds
 3000 on 40960, time since last print: 7086.09 seconds
+4000 on 40960, time since last print: 7009.79 seconds
+5000 on 40960, time since last print: 7207.73 seconds
+6000 on 40960, time since last print: 7230.28 seconds
+7000 on 40960, time since last print: 7183.63 seconds
+8000 on 40960, time since last print: 7181.34 seconds
+9000 on 40960, time since last print: 7264.32 seconds
+10000 on 40960, time since last print: 7216.21 seconds
+11000 on 40960, time since last print: 7239.06 seconds
+12000 on 40960, time since last print: 7268.32 seconds
+13000 on 40960, time since last print: 7195.60 seconds
+14000 on 40960, time since last print: 7163.57 seconds
+15000 on 40960, time since last print: 7320.23 seconds
+16000 on 40960, time since last print: 7176.15 seconds
+17000 on 40960, time since last print: 7082.21 seconds
+18000 on 40960, time since last print: 7140.21 seconds
+19000 on 40960, time since last print: 7184.40 seconds
+20000 on 40960, time since last print: 7048.85 seconds
+21000 on 40960, time since last print: 7191.73 seconds
+22000 on 40960, time since last print: 7031.40 seconds
+23000 on 40960, time since last print: 7076.11 seconds
+24000 on 40960, time since last print: 7077.97 seconds
+25000 on 40960, time since last print: 7195.23 seconds
+26000 on 40960, time since last print: 7326.33 seconds
+27000 on 40960, time since last print: 7186.18 seconds
+28000 on 40960, time since last print: 7038.87 seconds
+29000 on 40960, time since last print: 7116.67 seconds
+30000 on 40960, time since last print: 7045.01 seconds
+31000 on 40960, time since last print: 7031.60 seconds
+32000 on 40960, time since last print: 7001.46 seconds
+33000 on 40960, time since last print: 7617.98 seconds
+34000 on 40960, time since last print: 7494.98 seconds
+35000 on 40960, time since last print: 7196.67 seconds
+36000 on 40960, time since last print: 7279.45 seconds
+37000 on 40960, time since last print: 7068.49 seconds
+38000 on 40960, time since last print: 7080.88 seconds
+39000 on 40960, time since last print: 7265.00 seconds
+40000 on 40960, time since last print: 7294.01 seconds
+2013
+    G06F
+0 on 33095, time since last print: 8666.84 seconds
+1000 on 33095, time since last print: 6887.28 seconds
+2000 on 33095, time since last print: 6771.39 seconds
+3000 on 33095, time since last print: 7004.35 seconds
+4000 on 33095, time since last print: 6931.34 seconds
+5000 on 33095, time since last print: 6992.73 seconds
+6000 on 33095, time since last print: 6748.34 seconds
+7000 on 33095, time since last print: 6677.60 seconds
+8000 on 33095, time since last print: 6695.75 seconds
+9000 on 33095, time since last print: 6619.19 seconds
+10000 on 33095, time since last print: 6729.05 seconds
+11000 on 33095, time since last print: 6788.75 seconds
+12000 on 33095, time since last print: 6758.35 seconds
+13000 on 33095, time since last print: 6713.47 seconds
+14000 on 33095, time since last print: 6607.40 seconds
+15000 on 33095, time since last print: 6629.37 seconds
+16000 on 33095, time since last print: 6726.35 seconds
+17000 on 33095, time since last print: 6634.25 seconds
+18000 on 33095, time since last print: 6716.73 seconds
+19000 on 33095, time since last print: 6644.98 seconds
+20000 on 33095, time since last print: 6697.63 seconds
+21000 on 33095, time since last print: 6648.32 seconds
+22000 on 33095, time since last print: 6795.53 seconds
+23000 on 33095, time since last print: 6614.31 seconds
+24000 on 33095, time since last print: 6501.26 seconds
+25000 on 33095, time since last print: 6686.84 seconds
+26000 on 33095, time since last print: 6708.64 seconds
+27000 on 33095, time since last print: 6634.76 seconds
+28000 on 33095, time since last print: 6635.59 seconds
+29000 on 33095, time since last print: 6548.17 seconds
+30000 on 33095, time since last print: 6622.03 seconds
+31000 on 33095, time since last print: 6759.75 seconds
+32000 on 33095, time since last print: 6686.13 seconds
+33000 on 33095, time since last print: 6619.33 seconds
+2014
+    G06F
+0 on 28378, time since last print: 2585.14 seconds
+1000 on 28378, time since last print: 6131.45 seconds
+2000 on 28378, time since last print: 6216.27 seconds
+3000 on 28378, time since last print: 6204.79 seconds
+4000 on 28378, time since last print: 6162.95 seconds
+5000 on 28378, time since last print: 6232.73 seconds
+6000 on 28378, time since last print: 6192.79 seconds
+7000 on 28378, time since last print: 6200.04 seconds
+8000 on 28378, time since last print: 6284.36 seconds
+9000 on 28378, time since last print: 6667.50 seconds
+10000 on 28378, time since last print: 6616.59 seconds
+No such comm target registered: jupyter.widget.control
+No such comm target registered: jupyter.widget.control
+No such comm: 1203b27a-1db3-4733-b329-8d3bafcf29ec
+No such comm: e12b8a5a-f3b0-4247-827a-8a88e5dfd813
