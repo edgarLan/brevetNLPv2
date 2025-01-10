@@ -56,8 +56,8 @@ class Surprise():
         # interList_w1 = [word for word in interList_w1 if word not in ['w1', 'w2']]
         # interList_w2 = [word for word in interList_w2 if word not in ['w1', 'w2']]
 
-        interList_w1 = list(set(w1_old + w1_new) - {'w1', 'w2'})
-        interList_w2 = list(set(w2_old + w2_new) - {'w1', 'w2'})
+        interList_w1 = list(set(w1_old) & set(w1_new) - {'w1', 'w2'})
+        interList_w2 = list(set(w2_old) & set(w2_new) - {'w1', 'w2'})
 
         vectors = {}
         # for entry in tqdm(interList_w1):
@@ -65,7 +65,7 @@ class Surprise():
         #     vec_2 = [dict_new.get(entry, {}).get(key, epsilon) for key in interList_w2]
         #     vectors[entry] = (vec_1, vec_2)
 
-        for entry in tqdm(interList_w1):
+        for entry in (interList_w1):
             # Fetch the vectors from dict_old and dict_new for the current entry
             vec_1_dict = dict_old.get(entry, {})
             vec_2_dict = dict_new.get(entry, {})
@@ -136,7 +136,7 @@ class Surprise():
         # print(key_list)
         print("JSDiv")
         #i=0
-        for entry in tqdm(key_list):
+        for entry in (key_list):
             tuple_known, tuple_new = vecotr_tuples[entry]
             
             #### We want only positive PMI score -- no negative values for not going nan or inf values  
@@ -149,6 +149,9 @@ class Surprise():
             #     print(sum(tuple_new))
             # i+=1
             tuple_new = np.maximum(0., np.array(tuple_new))
+            mask = (np.array(tuple_new) != 0).astype(int)
+            # Apply the mask to tuple_known
+            tuple_known = tuple_known * mask
     
             if tuple_known.sum() and tuple_new.sum():
                 surprise_dists.append(Jensen_Shannon().JSDiv(tuple_known, tuple_new))
@@ -157,6 +160,39 @@ class Surprise():
         surprise_score = sum(surprise_dists) / len(surprise_dists)
         # print(sum(surprise_dists))
         dist_surprise = 0
+        if surprise_score > thr_surp:
+            dist_surprise = 1
+            
+        return surprise_score, dist_surprise
+    
+    def unique_surp_courte(self, newpmi_PMI, known_pmi, base_bigram_set,  eps= 0, thr_surp=0.):
+        update_bigram_set = set(newpmi_PMI.keys())
+        common_bigram_set = update_bigram_set & base_bigram_set
+
+        dict_new = pmi_to_dict_adj_dict({key: newpmi_PMI[key] for key in common_bigram_set})
+        dict_known = pmi_to_dict_adj_dict({key: known_pmi[key] for key in common_bigram_set})
+        vecotr_tuples = self.get_common_vectors_adj(dict_known, dict_new, epsilon = eps)
+
+        key_list = vecotr_tuples.keys()
+        surprise_dists = []
+        for entry in (key_list):
+            tuple_known, tuple_new = vecotr_tuples[entry]
+            
+            #### We want only positive PMI score -- no negative values for not going nan or inf values  
+            mask = (np.array(tuple_known) != 0).astype(int)
+            tuple_known = np.maximum(0., np.array(tuple_known))
+            # Apply the mask to tuple_known
+            tuple_new = tuple_new * mask
+
+            mask = (np.array(tuple_new) != 0).astype(int)
+            tuple_new = np.maximum(0., np.array(tuple_new))
+            # Apply the mask to tuple_known
+            tuple_known = tuple_known * mask
+
+            if tuple_known.sum() and tuple_new.sum():
+                surprise_dists.append(Jensen_Shannon().JSDiv(tuple_known, tuple_new))
+            else: surprise_dists.append(0)
+        surprise_score = sum(surprise_dists) / len(surprise_dists)
         if surprise_score > thr_surp:
             dist_surprise = 1
             

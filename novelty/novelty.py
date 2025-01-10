@@ -312,12 +312,12 @@ class ClusterKS(Difference):
 
         # Perform clustering
         n_clusters = int(self.list_know_P.shape[0]/self.nbPtsPerCluster)  # Set based on dataset size and structure
-        kmeans = KMeans(n_clusters=n_clusters, random_state=42)
+        kmeans = KMeans(n_clusters=n_clusters) #, random_state=42)
         # print(n_clusters)
         labels = kmeans.fit_predict(self.list_know_P)
 
         # Cluster assignments
-        clusters = {i: [] for i in range(n_clusters)}
+        clusters = {i: [] for i in (range(n_clusters))}
         for idx, label in enumerate(labels):
             clusters[label].append(idx)
         
