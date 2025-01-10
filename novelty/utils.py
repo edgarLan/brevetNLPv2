@@ -90,18 +90,18 @@ class OptimizedIncrementalPMI:
         """
         pmi_scores = {}
 
-        for (word1, word2), count in tqdm(self.bigram_counts.items()):
+        for (word1, word2), count in (self.bigram_counts.items()):
             pmi = math.log2(count/(self.word_counts[word1]*self.word_counts[word2])) + math.log2(self.total_words*1/(self.window_size - 1))
-            pmi_scores[(word1, word2)] = [pmi, self.word_counts[word1], self.word_counts[word2], count]
+            pmi_scores[(word1, word2)] = pmi #self.word_counts[word1], self.word_counts[word2], count]
     
         # pmi_scores = []
         # for (word1, word2), count in tqdm(self.bigram_counts.items()):
         #     pmi = math.log2(count / (self.word_counts[word1] * self.word_counts[word2])) + math.log2(self.total_words * 1 / (self.window_size - 1))
         #     pmi_scores.append(((word1, word2), pmi))
-        word_counts_temp = Counter(self.word_counts)
-        bigram_counts_temp = Counter(self.bigram_counts)
-        total_words_temp = self.total_words
-        return pmi_scores, word_counts_temp, bigram_counts_temp, total_words_temp
+        # word_counts_temp = Counter(self.word_counts)
+        # bigram_counts_temp = Counter(self.bigram_counts)
+        # total_words_temp = self.total_words
+        return pmi_scores #, word_counts_temp, bigram_counts_temp, total_words_temp
 
 
 
@@ -172,13 +172,15 @@ def pmi_to_dict_adj_dict(pmi_dict):
     nested_dict = {}
     w1 = list(OrderedDict.fromkeys(key[0] for key in pmi_dict.keys()))
     w2 = list(OrderedDict.fromkeys(key[1] for key in pmi_dict.keys()))
-    
+
     for (key1, key2), value in pmi_dict.items():
         if key1 not in nested_dict:
             nested_dict[key1] = {}
-        nested_dict[key1][key2] = value[0]
+        nested_dict[key1][key2] = value #[0]
     nested_dict['w1'] = w1
     nested_dict['w2'] = w2
+    # print("w1: ", len(w1))
+    # print("w2: ", len(w2))
     
     return nested_dict
 
@@ -193,13 +195,36 @@ def pmi_to_dict_adj(pmi_dict):
     for (key1, key2), value in pmi_dict.items():
         if key1 not in nested_dict:
             nested_dict[key1] = {}
-        nested_dict[key1][key2] = value[0]
+        nested_dict[key1][key2] = value #[0]
 
     nested_dict['w1'] = list(w1)
     nested_dict['w2'] = list(w2)
 
     return nested_dict
 
+def dict2mat(dict_ini):
+    # Extract unique words for rows (second words) and columns (first words)
+    unique_words1 = sorted(set(pair[0] for pair in dict_ini.keys()))  # First word of bigram (columns)
+    unique_words2 = sorted(set(pair[1] for pair in dict_ini.keys()))  # Second word of bigram (rows)
+    
+    # Map words to indices
+    word1_to_index = {word: i for i, word in enumerate(unique_words1)}
+    word2_to_index = {word: i for i, word in enumerate(unique_words2)}
+
+    # Initialize the matrix with zeros
+    n_rows = len(unique_words2)
+    n_cols = len(unique_words1)
+    matrix = np.zeros((n_rows, n_cols))
+
+    # Populate the matrix
+    for (word1, word2), value in dict_ini.items():
+        row = word2_to_index[word2]
+        col = word1_to_index[word1]
+        matrix[row, col] = value
+
+    # Convert the matrix to a DataFrame for better readability
+    matrix_df = pd.DataFrame(matrix, index=unique_words2, columns=unique_words1)
+    return matrix_df
 
 
     
