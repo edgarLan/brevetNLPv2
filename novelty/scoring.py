@@ -33,7 +33,7 @@ def compute_scores(KB_matrix, KB_dist, NewKB_dist, variation_dist, dict_know_pmi
         if diff_type == 'global':
             dif_score, dif_bin = difference.ratio_to_all(neighbor_dist,  thr_diff=0.4177)
         else:
-            dif_score, dif_bin = difference.ratio_to_neighbors(neighbor_dist, thr_diff=0.1564)
+            dif_score, dif_bin, mean100 = difference.ratio_to_neighbors_joblib(neighbor_dist, thr_diff=0.1564)
     
     # print("Surprise")
     surprise = Surprise(New_EB_PMI)
