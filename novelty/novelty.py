@@ -298,7 +298,7 @@ class Difference():
         novel_diff = int(difference > thr_diff)
         mean100 = np.mean(closests)
 
-        return difference, novel_diff, closests, mean100
+        return difference, novel_diff, mean100 #closests #
     
 
 class ClusterKS(Difference):
@@ -311,7 +311,7 @@ class ClusterKS(Difference):
         # Reduce dimensionality for faster clustering (optional)
 
         # Perform clustering
-        n_clusters = int(self.list_know_P.shape[0]/self.nbPtsPerCluster)  # Set based on dataset size and structure
+        n_clusters = math.ceil(self.list_know_P.shape[0]/self.nbPtsPerCluster)  # Set based on dataset size and structure
         kmeans = KMeans(n_clusters=n_clusters) #, random_state=42)
         # print(n_clusters)
         labels = kmeans.fit_predict(self.list_know_P)

@@ -192,7 +192,11 @@ class Surprise():
             if tuple_known.sum() and tuple_new.sum():
                 surprise_dists.append(Jensen_Shannon().JSDiv(tuple_known, tuple_new))
             else: surprise_dists.append(0)
-        surprise_score = sum(surprise_dists) / len(surprise_dists)
+        if len(surprise_dists) == 0:
+            surprise_score=0
+        else:
+            surprise_score = sum(surprise_dists) / len(surprise_dists)
+        dist_surprise = 0
         if surprise_score > thr_surp:
             dist_surprise = 1
             
