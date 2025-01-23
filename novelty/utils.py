@@ -57,32 +57,32 @@ class OptimizedIncrementalPMI:
         )
         self.bigram_counts.update(bigrams)
 
-    def reset(self, input_):
-        """
-        Reset bigram counts and word counts with an input data, effectively removing its influence.
+    # def reset(self, input_):
+    #     """
+    #     Reset bigram counts and word counts with an input data, effectively removing its influence.
 
-        Parameters:
-        - input_: List of words (text to remove from the counts)
-        """
-        # Decrement word counts
-        for word in input_:
-            if self.word_counts[word] > 0:
-                self.word_counts[word] -= 1
-                self.total_words -= 1
-                if self.word_counts[word] == 0:
-                    del self.word_counts[word]  # Remove word if its count reaches zero
+    #     Parameters:
+    #     - input_: List of words (text to remove from the counts)
+    #     """
+    #     # Decrement word counts
+    #     for word in input_:
+    #         if self.word_counts[word] > 0:
+    #             self.word_counts[word] -= 1
+    #             self.total_words -= 1
+    #             if self.word_counts[word] == 0:
+    #                 del self.word_counts[word]  # Remove word if its count reaches zero
         
-        # Decrement bigram counts
-        bigrams = (
-            (input_[i], input_[j])
-            for i in range(len(input_))
-            for j in range(i + 1, min(i + self.window_size, len(input_)))
-        )
-        for bigram in bigrams:
-            if self.bigram_counts[bigram] > 0:
-                self.bigram_counts[bigram] -= 1
-                if self.bigram_counts[bigram] == 0:
-                    del self.bigram_counts[bigram]  # Remove bigram if its count reaches zero
+    #     # Decrement bigram counts
+    #     bigrams = (
+    #         (input_[i], input_[j])
+    #         for i in range(len(input_))
+    #         for j in range(i + 1, min(i + self.window_size, len(input_)))
+    #     )
+    #     for bigram in bigrams:
+    #         if self.bigram_counts[bigram] > 0:
+    #             self.bigram_counts[bigram] -= 1
+    #             if self.bigram_counts[bigram] == 0:
+    #                 del self.bigram_counts[bigram]  # Remove bigram if its count reaches zero
 
     def compute_pmi(self):
         """
