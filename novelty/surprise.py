@@ -17,6 +17,7 @@ import importlib
 importlib.reload(divergences)
 from divergences import Jensen_Shannon
 import numpy as np
+from joblib import Parallel, delayed
 
 class Surprise():
 
@@ -200,4 +201,54 @@ class Surprise():
         if surprise_score > thr_surp:
             dist_surprise = 1
             
+        return surprise_score, dist_surprise
+    
+
+    def parallel_intersection(self, update_bigram_set, base_bigram_set, n_jobs=-1):
+        update_bigram_list = list(update_bigram_set)
+        chunk_size = len(update_bigram_list) // (n_jobs * 2) or 1  # Avoid zero division
+
+        def intersect_chunk(start, end):
+            return set(update_bigram_list[start:end]) & base_bigram_set
+
+        # Parallel intersection
+        chunks = [(i, min(i + chunk_size, len(update_bigram_list))) for i in range(0, len(update_bigram_list), chunk_size)]
+        results = Parallel(n_jobs=n_jobs)(delayed(intersect_chunk)(start, end) for start, end in chunks)
+
+        # Merge results
+        return set().union(*results)
+
+    def unique_surp_courte_joblib(self, newpmi_PMI, known_pmi, base_bigram_set, eps=0, thr_surp=0.):
+        update_bigram_set = set(newpmi_PMI.keys())
+
+        # Parallelized intersection
+        common_bigram_set = self.parallel_intersection(update_bigram_set, base_bigram_set)
+
+        dict_new = pmi_to_dict_adj_dict({key: newpmi_PMI[key] for key in common_bigram_set})
+        dict_known = pmi_to_dict_adj_dict({key: known_pmi[key] for key in common_bigram_set})
+        vecotr_tuples = self.get_common_vectors_adj(dict_known, dict_new, epsilon=eps)
+
+        key_list = vecotr_tuples.keys()
+        surprise_dists = []
+
+        for entry in key_list:
+            tuple_known, tuple_new = vecotr_tuples[entry]
+
+            #### We want only positive PMI scores  
+            mask = (np.array(tuple_known) != 0).astype(int)
+            tuple_known = np.maximum(0., np.array(tuple_known))
+            tuple_new = tuple_new * mask
+
+            mask = (np.array(tuple_new) != 0).astype(int)
+            tuple_new = np.maximum(0., np.array(tuple_new))
+            tuple_known = tuple_known * mask
+
+            if tuple_known.sum() and tuple_new.sum():
+                surprise_dists.append(Jensen_Shannon().JSDiv(tuple_known, tuple_new))
+            else:
+                surprise_dists.append(0)
+
+        surprise_score = sum(surprise_dists) / len(surprise_dists) if surprise_dists else 0
+        dist_surprise = 1 if surprise_score > thr_surp else 0
+
         return surprise_score, dist_surprise

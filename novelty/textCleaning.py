@@ -117,6 +117,19 @@ def extract_year_ipc(filename):
         print(f"Filename format unexpected: {filename}")
         return None, None
 
+def extract_year_ipc_vs(filename):
+    # Regular expression to capture year, ipc, and the part between ipc and Metrics
+    match = re.match(r'(\d{4})_(\w{4})_([^_]+_.*)_Metrics\.csv', filename)
+    
+    if match:
+        year = match.group(1)
+        ipc = match.group(2)
+        vs = match.group(3)
+        return year, ipc, vs
+    else:
+        print(f"Filename format unexpected: {filename}")
+        return None, None, None
+
 def parse_stopwords(file_path):
     # Creates a dictionnary of lists of stopwords from .txt file
 
